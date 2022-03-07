@@ -11,12 +11,14 @@ public class User {
     public String lastName;
     public LinkedList<Integer> courses;
     public int id;
+
     public User(String username, String password, String name, String lastName){
         this.username = username;
         this.password = password;
         this.name = name;
         this.lastName = lastName;
-        this.id = lastId++;
+        this.id = lastId + 1;
+        lastId++;
         this.courses = new LinkedList<>();
     }
 
