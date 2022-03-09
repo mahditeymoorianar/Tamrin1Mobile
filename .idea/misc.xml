@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/button_bg.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/edit_text.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/edit_text_bg.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/view_bg.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/view_button.xml" value="0.18" />
@@ -17,9 +18,9 @@
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.32664693196614586" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/login_tab_fragment.xml" value="0.29171447753906254" />
-        <entry key="app/src/main/res/layout/prof_signup_tab_fragment.xml" value="0.22415974934895838" />
+        <entry key="app/src/main/res/layout/prof_signup_tab_fragment.xml" value="0.3183181762695313" />
         <entry key="app/src/main/res/layout/signup_tab_fragment.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/student_signup_tab_fragment.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/student_signup_tab_fragment.xml" value="0.36726582845052086" />
       </map>
     </option>
   </component>

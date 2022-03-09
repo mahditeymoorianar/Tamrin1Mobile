@@ -10,13 +10,16 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import edu.sharif.mpqueraapp.R;
 
 public class LoginTabFragment extends Fragment {
     Button button;
     EditText username;
-    EditText password;
+    TextInputEditText password;
+    TextInputLayout layout;
     Button login;
     float v = 0;
 
