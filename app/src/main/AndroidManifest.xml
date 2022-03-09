@@ -10,21 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MPQueraApp">
         <activity
+            android:name=".view.MainPageActivity"
+            android:exported="false"
+            android:parentActivityName=".view.authentication.AuthActivity"/>
+        <activity
             android:name=".view.authentication.AuthActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MPQueraApp.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.MPQueraApp.NoActionBar" />
     </application>
 
 </manifest>

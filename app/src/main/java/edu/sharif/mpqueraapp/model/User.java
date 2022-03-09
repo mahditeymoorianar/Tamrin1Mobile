@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 public class User {
 
+    public static LinkedList<User> users = new LinkedList<>();
+
     public static int lastId = 0;
     public String username;
     public String password;
@@ -21,5 +23,17 @@ public class User {
         lastId++;
         this.courses = new LinkedList<>();
     }
+
+
+    public static Integer usernameToId(String username){
+        for (User user : users) {
+            if (user.username.equals(username)){
+                return user.id;
+            }
+        }
+        return -1;
+    }
+
+
 
 }

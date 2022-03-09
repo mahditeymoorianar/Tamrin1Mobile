@@ -15,4 +15,5 @@
     <string name="welcome">Welcome</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="university">University</string>
+    <string name="title_activity_main_page">MainPageActivity</string>
 </resources>
