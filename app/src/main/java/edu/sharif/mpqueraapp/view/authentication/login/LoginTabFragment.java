@@ -12,9 +12,12 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
 
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.authentication.AuthController;
+import edu.sharif.mpqueraapp.model.Professor;
+import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.MainPageActivity;
 
 public class LoginTabFragment extends Fragment {
@@ -62,6 +65,16 @@ public class LoginTabFragment extends Fragment {
             if (state.equals("s") || state.equals("p")){
                 Intent intent = new Intent(getActivity(), MainPageActivity.class);
                 intent.putExtra("role", state);
+                if (switchCompat.isChecked()){
+                    Gson gson = new Gson();
+                    String json = gson.toJson(Professor.activeProf);
+                    intent.putExtra("user", json);
+                }
+                else{
+                    Gson gson = new Gson();
+                    String json = gson.toJson(Student.activeStudent);
+                    intent.putExtra("user", json);
+                }
                 startActivity(intent);
             }
             else{

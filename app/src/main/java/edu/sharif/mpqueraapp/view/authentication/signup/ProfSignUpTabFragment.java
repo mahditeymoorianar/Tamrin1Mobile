@@ -12,10 +12,11 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
 
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.authentication.AuthController;
+import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.view.MainPageActivity;
 
 public class ProfSignUpTabFragment extends Fragment {
@@ -64,19 +65,21 @@ public class ProfSignUpTabFragment extends Fragment {
         button.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(750).start();
 
         button.setOnClickListener(v -> {
-            String state = AuthController.SignInCheck(username.getText().toString(),
+            String state = AuthController.SignUpCheck(username.getText().toString(),
                     password.getText().toString(), confirmPass.getText().toString()
                     , name.getText().toString(), lastname.getText().toString(),
                     university.getText().toString(), 1);
             if (state.equals("")){
                 Intent intent = new Intent(getActivity(), MainPageActivity.class);
+                Gson gson = new Gson();
+                String json = gson.toJson(Professor.activeProf);
+                intent.putExtra("user", json);
                 intent.putExtra("role", "p");
                 startActivity(intent);
             }
             else{
                 status.setText(state);
             }
-
 
         });
 

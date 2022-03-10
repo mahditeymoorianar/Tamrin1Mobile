@@ -3,7 +3,6 @@ package edu.sharif.mpqueraapp.controller.authentication;
 
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
-import edu.sharif.mpqueraapp.model.User;
 
 
 public class CheckUsername {

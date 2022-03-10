@@ -30,6 +30,8 @@ public class Load {
         if (Student.students == null){
             Student.students = new LinkedList<>();
         }
+        Log.d(Professor.professors.size()+"", "loadUsers: ");
+
     }
 
 }

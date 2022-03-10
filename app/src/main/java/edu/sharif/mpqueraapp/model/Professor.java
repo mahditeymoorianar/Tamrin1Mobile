@@ -16,7 +16,6 @@ public class Professor extends User{
         super(username, password, name, lastName);
         this.university = university;
         professors.add(this);
-        users.add(this);
         try {
             Save.saveProfessors(AuthActivity.mPrefs);
         } catch (IOException e) {
@@ -25,9 +24,9 @@ public class Professor extends User{
     }
 
 
-    public static Professor getProf(int id){
+    public static Professor getProf(String username){
         for (Professor professor : professors) {
-            if (professor.id == id){
+            if (professor.username.equals(username)){
                 return professor;
             }
         }

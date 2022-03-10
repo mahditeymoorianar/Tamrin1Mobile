@@ -1,5 +1,7 @@
 package edu.sharif.mpqueraapp.model;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -19,7 +21,6 @@ public class Student extends User{
         this.studentsId = studentsId;
         this.homeworkAnswers = new LinkedList<>();
         students.add(this);
-        users.add(this);
         try {
             Save.saveStudents(AuthActivity.mPrefs);
         } catch (IOException e) {
@@ -28,9 +29,9 @@ public class Student extends User{
     }
 
 
-    public static Student getStudent(int id){
+    public static Student getStudent(String username){
         for (Student student : students) {
-            if (student.id == id){
+            if (student.username.equals(username)){
                 return student;
             }
         }
