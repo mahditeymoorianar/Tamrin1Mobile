@@ -7,8 +7,8 @@ import edu.sharif.mpqueraapp.model.User;
 
 public class CheckPassword {
 
-    public static  <T extends User> boolean checkPass(String username, String password
-            , LinkedList<T> users){
+    public static  <T extends User> boolean checkPass(String username, String password, LinkedList<T> users){
+
         for (T i: users) {
             if (i.password.equals(password) && i.username.equals(username)){
                 return true;

@@ -38,7 +38,7 @@ public class ProfSignUpTabFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.prof_signup_tab_fragment, container, false);
 
-        username = root.findViewById(R.id.username);
+        username = root.findViewById(R.id.answerText);
         name = root.findViewById(R.id.name);
         lastname = root.findViewById(R.id.lastname);
         password = root.findViewById(R.id.password);

@@ -3,30 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../../layout/custom_preview.xml" value="0.14537037037037037" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/button_bg.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/edit_text.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/edit_text_bg.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/view_bg.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/view_button.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3016443667204484" />
-        <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.2605579204205177" />
-        <entry key="app/src/main/res/layout/content_main.xml" value="0.29358113606770836" />
-        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.32664693196614586" />
-        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/login_tab_fragment.xml" value="0.29171447753906254" />
-        <entry key="app/src/main/res/layout/prof_signup_tab_fragment.xml" value="0.38789062499999993" />
-        <entry key="app/src/main/res/layout/signup_tab_fragment.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/student_signup_tab_fragment.xml" value="0.26397918701171874" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/activity_auth.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/activity_exercise_page.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/activity_main_page.xml" value="0.25" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/content_main.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/fragment_first.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/fragment_second.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/homework_student_page.xml" value="0.25" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/login_tab_fragment.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/prof_signup_tab_fragment.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/signup_tab_fragment.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/layout/student_signup_tab_fragment.xml" value="0.209375" />
+        <entry key="..\:/Users/g50/StudioProjects/MPQueraApp/app/src/main/res/menu/menu_main.xml" value="0.209375" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
   </component>
 </project>
