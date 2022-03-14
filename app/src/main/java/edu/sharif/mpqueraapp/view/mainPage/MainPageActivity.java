@@ -41,6 +41,7 @@ public class MainPageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String role = intent.getStringExtra("role");
         String user = intent.getStringExtra("user");
+        System.out.println(user);
 
 
         nameTextView = findViewById(R.id.nameTextView);
@@ -69,7 +70,19 @@ public class MainPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                
+                if (role.equals("s")){
+
+                    Intent createClassIntent = new Intent(MainPageActivity.this, CreateCourseActivity.class);
+                    createClassIntent.putExtra("user", user);
+                    startActivity(createClassIntent);
+                }
+                else{
+
+                    Intent createClassIntent = new Intent(MainPageActivity.this, CreateCourseActivity.class);
+                    createClassIntent.putExtra("user", user);
+                    startActivity(createClassIntent);
+                }
+
             }
         });
 

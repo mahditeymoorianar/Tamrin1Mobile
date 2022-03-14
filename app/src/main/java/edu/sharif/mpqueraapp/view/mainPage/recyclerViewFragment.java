@@ -22,6 +22,7 @@ public class recyclerViewFragment extends Fragment {
     ArrayList itemNames;
 
     public recyclerViewFragment(LinkedList itemNames) {
+        this.itemNames = new ArrayList();
         this.itemNames.addAll(itemNames);
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.sharif.mpqueraapp" >
+    package="edu.sharif.mpqueraapp">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MPQueraApp" >
+        android:theme="@style/Theme.MPQueraApp">
+        <activity
+            android:name=".view.mainPage.CreateCourseActivity"
+            android:exported="true"/>
         <activity
             android:name=".view.exercise.ExercisePage"
             android:exported="true" />
@@ -18,7 +21,7 @@
             android:parentActivityName=".view.authentication.AuthActivity" />
         <activity
             android:name=".view.authentication.AuthActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

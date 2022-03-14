@@ -39,7 +39,7 @@ public class StudentSignUpTabFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.student_signup_tab_fragment, container, false);
 
         username = root.findViewById(R.id.answerText);
-        status = root.findViewById(R.id.status);
+        status = root.findViewById(R.id.statusCreateCourse);
         name = root.findViewById(R.id.name);
         lastname = root.findViewById(R.id.lastname);
         password = root.findViewById(R.id.password);

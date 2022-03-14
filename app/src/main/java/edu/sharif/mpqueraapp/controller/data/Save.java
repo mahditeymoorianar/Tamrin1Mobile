@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.IOException;
 
+import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 
@@ -25,6 +26,14 @@ public class Save {
         Gson gson = new Gson();
         String json = gson.toJson(Professor.professors);
         prefsEditor.putString("professors", json);
+        prefsEditor.commit();
+    }
+
+    public static void saveCourses(SharedPreferences mPrefs) throws IOException {
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(Course.courses);
+        prefsEditor.putString("courses", json);
         prefsEditor.commit();
     }
 

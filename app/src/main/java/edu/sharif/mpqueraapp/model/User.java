@@ -1,6 +1,10 @@
 package edu.sharif.mpqueraapp.model;
 
+import java.io.IOException;
 import java.util.LinkedList;
+
+import edu.sharif.mpqueraapp.controller.data.Save;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 public class User {
 
@@ -34,6 +38,15 @@ public class User {
         return -1;
     }
 
+    public void addNewCourse(String courseName) {
+        Course newCourse = new Course(this.id, courseName);
+        courses.add(newCourse.id);
+        try {
+            Save.saveProfessors(AuthActivity.mPrefs);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

@@ -42,7 +42,7 @@ public class LoginTabFragment extends Fragment {
         password = root.findViewById(R.id.password);
         switchCompat = root.findViewById(R.id.profSwitch);
         button = root.findViewById(R.id.login);
-        status = root.findViewById(R.id.status);
+        status = root.findViewById(R.id.statusCreateCourse);
 
         username.setAlpha(v);
         password.setAlpha(v);

@@ -45,7 +45,7 @@ public class ProfSignUpTabFragment extends Fragment {
         confirmPass = root.findViewById(R.id.confirm_password);
         university = root.findViewById(R.id.university);
         button = root.findViewById(R.id.signup);
-        status = root.findViewById(R.id.status);
+        status = root.findViewById(R.id.statusCreateCourse);
 
         username.setAlpha(v);
         name.setAlpha(v);

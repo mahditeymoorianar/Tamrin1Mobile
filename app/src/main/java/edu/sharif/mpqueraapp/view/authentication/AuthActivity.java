@@ -29,6 +29,7 @@ public class AuthActivity extends AppCompatActivity {
         authAdapter = new AuthAdapter(this);
         mPrefs = getPreferences(MODE_PRIVATE);
         Load.loadUsers(mPrefs);
+        Load.loadCourses(mPrefs);
         viewPager.setAdapter(authAdapter);
         new TabLayoutMediator(tabLayout, viewPager,((tab, i) -> tab.setText(titles[i]))).attach();
 

@@ -9,8 +9,10 @@ import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.LinkedList;
 
+import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
+import edu.sharif.mpqueraapp.model.User;
 
 public class Load {
 
@@ -30,7 +32,24 @@ public class Load {
         if (Student.students == null){
             Student.students = new LinkedList<>();
         }
+
+
         Log.d(Professor.professors.size()+"", "loadUsers: ");
+
+    }
+
+    public static void loadCourses(SharedPreferences mPrefs) {
+        Type listType = new TypeToken<LinkedList<Course>>(){}.getType();
+        Gson gson = new Gson();
+        String json = mPrefs.getString("courses", "");
+        Course.courses = gson.fromJson(json, listType);
+        if (Course.courses == null){
+            Course.courses = new LinkedList<>();
+        }
+
+        for (Course course : Course.courses) {
+            Course.coursesIds.put(course.id, course);
+        }
 
     }
 

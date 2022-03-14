@@ -32,4 +32,15 @@ public class Professor extends User{
         }
         return null;
     }
+
+    public boolean hasCourse(String courseName) {
+        System.out.println(courses);
+        System.out.println(Course.coursesIds);
+        for (Integer courseId : courses) {
+            if (Course.coursesIds.get(courseId).courseName.equals(courseName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
