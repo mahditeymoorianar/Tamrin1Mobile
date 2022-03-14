@@ -13,7 +13,7 @@
             android:name=".view.exercise.ExercisePage"
             android:exported="true" />
         <activity
-            android:name=".view.MainPageActivity"
+            android:name=".view.mainPage.MainPageActivity"
             android:exported="false"
             android:parentActivityName=".view.authentication.AuthActivity" />
         <activity

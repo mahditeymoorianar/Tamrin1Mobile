@@ -18,7 +18,7 @@ import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.authentication.AuthController;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
-import edu.sharif.mpqueraapp.view.MainPageActivity;
+import edu.sharif.mpqueraapp.view.mainPage.MainPageActivity;
 
 public class LoginTabFragment extends Fragment {
 
