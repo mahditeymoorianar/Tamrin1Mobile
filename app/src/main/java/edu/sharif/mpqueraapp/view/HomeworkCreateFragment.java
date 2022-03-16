@@ -1,4 +1,4 @@
-package edu.sharif.mpqueraapp;
+package edu.sharif.mpqueraapp.view;
 
 import android.os.Bundle;
 
@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
+import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.model.Homework;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +23,7 @@ public class HomeworkCreateFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static Homework homework = null;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +64,13 @@ public class HomeworkCreateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        EditText homeworkTitle = container.findViewById(R.id.newHomeworkTitleTextView);
+        EditText homeworkDescription = container.findViewById(R.id.homeworkDescriptionEditText);
+        if (homework != null) {
+            homeworkTitle.setText(homework.title);
+            homeworkDescription.setText(homework.description);
+        }
+
         return inflater.inflate(R.layout.fragment_homework_create, container, false);
     }
 }
