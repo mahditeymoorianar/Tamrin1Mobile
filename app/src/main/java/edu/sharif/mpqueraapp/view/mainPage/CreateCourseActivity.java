@@ -44,7 +44,9 @@ public class CreateCourseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (editTextCourseName.getText() != null) {
-                    String response = CourseController.createNewCourseCheck(professor.username, editTextCourseName.getText().toString());
+                    String response = CourseController
+                            .createNewCourseCheck(professor.username, editTextCourseName.getText()
+                                    .toString());
                     if (!response.equals("success")) {
                         statusCreateCourse.setText(response);
                     }

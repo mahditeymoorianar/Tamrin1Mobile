@@ -3,12 +3,9 @@ package edu.sharif.mpqueraapp.controller.authentication;
 import static edu.sharif.mpqueraapp.controller.authentication.CheckPassword.checkPass;
 import static edu.sharif.mpqueraapp.controller.authentication.CheckUsername.checkUsernameProfessors;
 import static edu.sharif.mpqueraapp.controller.authentication.CheckUsername.checkUsernameStudents;
-
-import android.util.Log;
-
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
-import edu.sharif.mpqueraapp.model.User;
+
 
 public class AuthController {
 

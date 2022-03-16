@@ -26,8 +26,22 @@ public class Course {
     }
 
 
+    public void addStudent(String courseId, Integer studentID){
 
-    public void addStudent(){
+        if (!coursesIds.get(courseId).studentsIds.contains(studentID)){
+            coursesIds.get(courseId).studentsIds.add(studentID);
+        }
 
     }
+
+
+    public static Integer name2id(String name){
+        for (Course course : courses) {
+            if (course.courseName.equals(name)){
+                return course.id;
+            }
+        }
+        return -1;
+    }
+
 }
