@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/professorSubmitButtonView"
         android:layout_width="164dp"
         android:layout_height="67dp"
         android:text="@string/submit"

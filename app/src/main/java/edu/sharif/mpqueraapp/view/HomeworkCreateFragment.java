@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import edu.sharif.mpqueraapp.R;
@@ -24,6 +25,7 @@ public class HomeworkCreateFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static Homework homework = null;
+    private static int courseId = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -66,11 +68,27 @@ public class HomeworkCreateFragment extends Fragment {
         // Inflate the layout for this fragment
         EditText homeworkTitle = container.findViewById(R.id.newHomeworkTitleTextView);
         EditText homeworkDescription = container.findViewById(R.id.homeworkDescriptionEditText);
+        Button button = container.findViewById(R.id.professorSubmitButtonView);
         if (homework != null) {
             homeworkTitle.setText(homework.title);
             homeworkDescription.setText(homework.description);
         }
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (homework == null) {
+                    homework = new Homework(courseId,
+                            homeworkTitle.getText().toString(),
+                            homeworkDescription.getText().toString());
+                    // TODO : to save the homework in the database
+                } else {
+                    homework.title = homeworkTitle.getText().toString();
+                    homework.description = homeworkDescription.getText().toString();
+                    // TODO : to save the homework in the database
+                }
+            }
+        });
         return inflater.inflate(R.layout.fragment_homework_create, container, false);
     }
 }
