@@ -22,4 +22,7 @@
     <string name="course_name">Course Name</string>
     <string name="submit">submit</string>
     <string name="create">create</string>
+    <string name="deadline">Deadline</string>
+    <string name="homework_default_title">New Homework</string>
+    <string name="homework_default_description">Dear students. Here is a new homework!</string>
 </resources>

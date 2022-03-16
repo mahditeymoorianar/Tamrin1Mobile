@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MP Quera App</string>
+    <string name="deadline">مهلت</string>
+    <string name="create">ساختن</string>
+    <string name="submit">فرستادن</string>
+    <string name="course_name">نام کلاس یا دوره</string>
+    <string name="action_settings">تنظیمات</string>
+    <string name="next">بعدی</string>
+    <string name="previous">قبلی</string>
+    <string name="password">گذرواژه</string>
+    <string name="username">نام کاربری</string>
+    <string name="answer_text">متن پاسخ</string>
+    <string name="login">ورود</string>
+    <string name="welcome">خوش آمدید</string>
+    <string name="confirm_password">تأیید گذرواژه</string>
+    <string name="university">دانشگاه</string>
+    <string name="homework_default_title">تمرین نو</string>
+    <string name="homework_default_description">دانشجویان گرامی سلام. یک تمرین نو دارید</string>
+</resources>
