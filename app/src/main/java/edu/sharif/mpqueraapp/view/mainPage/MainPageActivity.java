@@ -18,6 +18,7 @@ import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
+import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
 
 
 public class MainPageActivity extends AppCompatActivity {
@@ -72,13 +73,16 @@ public class MainPageActivity extends AppCompatActivity {
 
                 if (role.equals("s")){
 
-                    Intent createClassIntent = new Intent(MainPageActivity.this, CreateCourseActivity.class);
-                    createClassIntent.putExtra("user", user);
-                    startActivity(createClassIntent);
+                    Intent joinCourseIntent = new Intent(MainPageActivity.this
+                            , JoinCourseActivity.class);
+                    joinCourseIntent.putExtra("user", user);
+                    startActivity(joinCourseIntent);
+
                 }
                 else{
 
-                    Intent createClassIntent = new Intent(MainPageActivity.this, CreateCourseActivity.class);
+                    Intent createClassIntent = new Intent(MainPageActivity.this,
+                            CreateCourseActivity.class);
                     createClassIntent.putExtra("user", user);
                     startActivity(createClassIntent);
                 }

@@ -13,6 +13,10 @@
             android:name=".view.mainPage.CreateCourseActivity"
             android:exported="true"/>
         <activity
+            android:name=".view.mainPage.student.JoinCourseActivity"
+            android:parentActivityName=".view.mainPage.MainPageActivity"
+            android:exported="true"/>
+        <activity
             android:name=".view.exercise.ExercisePage"
             android:exported="true" />
         <activity
