@@ -9,9 +9,8 @@
 
     <EditText
         android:id="@+id/answerTextEditView"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="660dp"
+        android:layout_height="295dp"
         android:background="@drawable/edit_text_bg"
         android:hint="@string/answer_text"
         android:inputType="text"
@@ -19,42 +18,49 @@
         android:paddingStart="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
         app:layout_constraintWidth_percent="0.8" />
 
     <TextView
         android:id="@+id/homeworkTitleTextView"
-        android:layout_width="294dp"
-        android:layout_height="55dp"
+        android:layout_width="292dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/edit_text_bg"
         android:padding="10dp"
         android:text="homeworkTitleTextView"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="41dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="216dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="76dp"
+        android:layout_width="249dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="#F40000"
         android:text="@string/delete"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="509dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/homeworkTitleTextView"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

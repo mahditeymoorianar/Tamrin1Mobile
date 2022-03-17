@@ -38,7 +38,7 @@ public class StudentSignUpTabFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.student_signup_tab_fragment, container, false);
 
-        username = root.findViewById(R.id.answerText);
+        username = root.findViewById(R.id.answerTextEditView);
         status = root.findViewById(R.id.statusCreateCourse);
         name = root.findViewById(R.id.name);
         lastname = root.findViewById(R.id.lastname);

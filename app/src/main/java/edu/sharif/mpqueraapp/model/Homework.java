@@ -3,7 +3,6 @@ package edu.sharif.mpqueraapp.model;
 import java.util.LinkedList;
 
 public class Homework{
-    // TODO : to add deadline
     public static int homeworkId = 0;
     public String title;
     public String description;

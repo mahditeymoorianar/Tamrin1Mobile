@@ -25,4 +25,5 @@
     <string name="deadline">Deadline</string>
     <string name="homework_default_title">New Homework</string>
     <string name="homework_default_description">Dear students. Here is a new homework!</string>
+    <string name="delete">Delete</string>
 </resources>

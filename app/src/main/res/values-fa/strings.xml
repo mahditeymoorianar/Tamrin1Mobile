@@ -17,4 +17,5 @@
     <string name="university">دانشگاه</string>
     <string name="homework_default_title">تمرین نو</string>
     <string name="homework_default_description">دانشجویان گرامی سلام. یک تمرین نو دارید</string>
+    <string name="delete">حذف</string>
 </resources>

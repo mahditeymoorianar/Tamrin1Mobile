@@ -38,7 +38,7 @@ public class LoginTabFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_tab_fragment, container
                 , false);
 
-        username = root.findViewById(R.id.answerText);
+        username = root.findViewById(R.id.answerTextEditView);
         password = root.findViewById(R.id.password);
         switchCompat = root.findViewById(R.id.profSwitch);
         button = root.findViewById(R.id.login);
