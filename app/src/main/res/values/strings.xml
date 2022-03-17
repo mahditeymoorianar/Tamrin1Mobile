@@ -31,4 +31,7 @@
     <string name="student_id">Student ID</string>
     <string name="are_you_professor">Professor</string>
     <string name="welcome_to_quera">Welcome to Quera</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="professor">Professor</string>
+    <string name="student">Student</string>
 </resources>

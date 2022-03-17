@@ -22,6 +22,10 @@ public class AuthActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // applying translations
+        titles[0] = getString(R.string.login);
+        titles[1] = getString(R.string.sign_up);
+
         setContentView(R.layout.activity_auth);
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);

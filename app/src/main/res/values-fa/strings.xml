@@ -23,4 +23,7 @@
     <string name="student_id">شماره دانشجویی</string>
     <string name="are_you_professor">استاد</string>
     <string name="welcome_to_quera">به کوئرا خوش آمدید</string>
+    <string name="sign_up">عضویت</string>
+    <string name="professor">استاد</string>
+    <string name="student">دانشجو</string>
 </resources>

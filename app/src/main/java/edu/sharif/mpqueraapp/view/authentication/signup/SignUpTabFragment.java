@@ -25,6 +25,8 @@ public class SignUpTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        titles[0] = getString(R.string.student);
+        titles[1] = getString(R.string.professor);
 
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.signup_tab_fragment, container, false);
 

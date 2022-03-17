@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
+
 public class SignUpAdapter extends FragmentStateAdapter {
 
     private String[] titles = {"Student", "Professor"};
