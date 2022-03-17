@@ -26,4 +26,9 @@
     <string name="homework_default_title">New Homework</string>
     <string name="homework_default_description">Dear students. Here is a new homework!</string>
     <string name="delete">Delete</string>
+    <string name="name">Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="student_id">Student ID</string>
+    <string name="are_you_professor">Professor</string>
+    <string name="welcome_to_quera">Welcome to Quera</string>
 </resources>

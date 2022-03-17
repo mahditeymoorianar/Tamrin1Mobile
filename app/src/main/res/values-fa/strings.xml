@@ -18,4 +18,9 @@
     <string name="homework_default_title">تمرین نو</string>
     <string name="homework_default_description">دانشجویان گرامی سلام. یک تمرین نو دارید</string>
     <string name="delete">حذف</string>
+    <string name="name">نام</string>
+    <string name="last_name">نام خانوادگی</string>
+    <string name="student_id">شماره دانشجویی</string>
+    <string name="are_you_professor">استاد</string>
+    <string name="welcome_to_quera">به کوئرا خوش آمدید</string>
 </resources>
