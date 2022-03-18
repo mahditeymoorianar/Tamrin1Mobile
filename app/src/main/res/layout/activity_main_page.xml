@@ -8,29 +8,58 @@
     tools:context=".view.mainPage.MainPageActivity">
 
 
+    <Button
+        android:id="@+id/searchButtonMainPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="@string/search"
+        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toEndOf="@+id/courseNameInput"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/courseNameInput"
+        android:layout_width="191dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="56dp"
+
+        android:background="@drawable/edit_text_bg"
+        android:hint="Course Id"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/classesRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="228dp"
+        android:layout_height="195dp"
+        android:layout_marginBottom="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addButton" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/classesRecyclerView"
+        app:layout_constraintVertical_bias="0.939"
         app:srcCompat="@android:drawable/ic_menu_add"
-        android:focusable="true" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/nameTextView"
@@ -39,11 +68,11 @@
         android:ems="10"
         android:minHeight="48dp"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/courseNameInput"
         app:layout_constraintEnd_toStartOf="@+id/addButton"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615"
-        android:textSize="20dp"/>
+        app:layout_constraintVertical_bias="0.25" />
 </androidx.constraintlayout.widget.ConstraintLayout>

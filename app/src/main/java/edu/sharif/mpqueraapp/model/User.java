@@ -41,8 +41,10 @@ public class User {
     public void addNewCourse(String courseName) {
         Course newCourse = new Course(this.id, courseName);
         courses.add(newCourse.id);
+
         try {
             Save.saveProfessors(AuthActivity.mPrefs);
+            Save.saveCourses(AuthActivity.mPrefs);
         } catch (IOException e) {
             e.printStackTrace();
         }

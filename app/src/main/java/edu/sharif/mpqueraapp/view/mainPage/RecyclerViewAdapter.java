@@ -2,6 +2,7 @@ package edu.sharif.mpqueraapp.view.mainPage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,57 +12,53 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.model.Course;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
+    LayoutInflater layoutInflater;
+    List<Course> courses;
 
-    Context context;
-    ArrayList arrayList;
-
-    public RecyclerViewAdapter(Context context, ArrayList arrayList) {
-        this.context = context;
-        this.arrayList = arrayList;
+    public RecyclerViewAdapter(Context context, List<Course> courses) {
+        this.layoutInflater = LayoutInflater.from(context);
+        this.courses = courses;
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        ViewHolderClass viewHolderClass = new ViewHolderClass(view);
-
-        return viewHolderClass;
+        return new ViewHolder(layoutInflater.inflate(R.layout.item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        ViewHolderClass viewHolderClass = (ViewHolderClass) holder;
-        viewHolderClass.textView.setText(arrayList.get(position).toString());
-        viewHolderClass.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                //
-            }
-        });
+        if (getItemCount() != 0) {
+            holder.courseName.setText(courses.get(position).courseName); // kolliat chetore dar in vaziat ke
 
+        }
     }
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return courses.size();
     }
 
-    public class ViewHolderClass extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView;
-        public ViewHolderClass(@NonNull View itemView) {
+        TextView courseName;
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView = (TextView) itemView.findViewById(R.id.itemTextView);
+            courseName = itemView.findViewById(R.id.itemTextView);
         }
+
+
     }
 }

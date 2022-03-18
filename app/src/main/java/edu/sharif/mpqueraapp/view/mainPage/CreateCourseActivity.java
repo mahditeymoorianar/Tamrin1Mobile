@@ -1,5 +1,7 @@
 package edu.sharif.mpqueraapp.view.mainPage;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.mainPage.CourseController;
@@ -9,6 +11,7 @@ import edu.sharif.mpqueraapp.model.User;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +36,7 @@ public class CreateCourseActivity extends AppCompatActivity {
         Gson gson = new Gson();
         Intent intent = getIntent();
         String user = intent.getStringExtra("user");
+        Log.d(TAG, "onCreate: " + user);
         Professor professor = gson.fromJson(user, new TypeToken<Professor>(){}.getType());
 
         createButton = findViewById(R.id.createButton);

@@ -33,6 +33,17 @@ public class Professor extends User{
         return null;
     }
 
+
+    public static Professor getProfById(Integer id){
+        for (Professor professor : professors) {
+            if (professor.id == id){
+                return professor;
+            }
+        }
+        return null;
+    }
+
+
     public boolean hasCourse(String courseName) {
         System.out.println(courses);
         System.out.println(Course.coursesIds);

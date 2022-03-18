@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MPQueraApp">
         <activity
+            android:name=".view.coursePage.CoursePageActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.mainPage.CreateCourseActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".view.mainPage.student.JoinCourseActivity"
-            android:parentActivityName=".view.mainPage.MainPageActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:parentActivityName=".view.mainPage.MainPageActivity" />
         <activity
             android:name=".view.exercise.ExercisePage"
             android:exported="true" />
