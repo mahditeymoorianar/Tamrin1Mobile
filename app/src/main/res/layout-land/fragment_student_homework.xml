@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentHomeworkFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/answerTextEditView"
+            android:layout_width="660dp"
+            android:layout_height="295dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/answer_text"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:id="@+id/homeworkTitleTextView"
+            android:layout_width="292dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/edit_text_bg"
+            android:padding="10dp"
+            android:text="homeworkTitleTextView"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button3" />
+
+        <Button
+            android:id="@+id/submitHomeworkAnswer"
+            android:layout_width="249dp"
+            android:layout_height="79dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#F40000"
+            android:text="@string/delete"
+            app:layout_constraintBottom_toBottomOf="@+id/submitHomeworkAnswer"
+            app:layout_constraintEnd_toStartOf="@+id/submitHomeworkAnswer"
+            app:layout_constraintStart_toEndOf="@+id/homeworkTitleTextView"
+            app:layout_constraintTop_toTopOf="@+id/submitHomeworkAnswer" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
