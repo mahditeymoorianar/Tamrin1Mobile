@@ -14,6 +14,7 @@ public class Course {
     public static HashMap<Integer, Course> coursesIds = new HashMap<>();
     public int id;
 
+
     public Course(int profId, String courseName) {
         this.courseName = courseName;
         this.profId = profId;
@@ -43,5 +44,6 @@ public class Course {
         }
         return -1;
     }
+
 
 }

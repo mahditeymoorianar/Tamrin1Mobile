@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.util.LinkedList;
 
 import edu.sharif.mpqueraapp.model.Course;
+import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
@@ -49,6 +50,18 @@ public class Load {
 
         for (Course course : Course.courses) {
             Course.coursesIds.put(course.id, course);
+        }
+
+    }
+
+
+    public static void loadHomeworks(SharedPreferences mPrefs) {
+        Type listType = new TypeToken<LinkedList<Homework>>(){}.getType();
+        Gson gson = new Gson();
+        String json = mPrefs.getString("homeworks", "");
+        Homework.homeworks = gson.fromJson(json, listType);
+        if (Homework.homeworks == null){
+            Homework.homeworks = new LinkedList<>();
         }
 
     }

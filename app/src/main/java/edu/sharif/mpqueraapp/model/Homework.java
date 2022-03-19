@@ -1,5 +1,6 @@
 package edu.sharif.mpqueraapp.model;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Homework{
@@ -9,6 +10,8 @@ public class Homework{
     public int courseId;
     public LinkedList<Integer> answersIds;
     public int id;
+    public static LinkedList<Homework> homeworks = new LinkedList<>();
+//    public static HashMap<Integer, Homework> homeworksIds = new HashMap<>();
 
     public Homework(int courseId) {
         this.courseId = courseId;
@@ -42,6 +45,15 @@ public class Homework{
         // Load homework with homeworkId id
         // Update answersIds List
         // Save the progress
+    }
+
+    public Homework getHomeworkById(Integer id){
+        for (Homework homework : homeworks) {
+            if (homework.id == id){
+                return homework;
+            }
+        }
+        return null;
     }
 
 }
