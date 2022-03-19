@@ -38,7 +38,7 @@ public class User {
         return -1;
     }
 
-    public void addNewCourse(String courseName) {
+    public Course addNewCourse(String courseName) {
         Course newCourse = new Course(this.id, courseName);
         courses.add(newCourse.id);
 
@@ -48,6 +48,8 @@ public class User {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return newCourse;
     }
 
 

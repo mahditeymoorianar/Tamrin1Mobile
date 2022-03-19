@@ -12,6 +12,7 @@ public class Course {
     public String courseName;
     public static LinkedList<Course> courses = new LinkedList<>();
     public static HashMap<Integer, Course> coursesIds = new HashMap<>();
+    public static Course activeCourse;
     public int id;
 
 

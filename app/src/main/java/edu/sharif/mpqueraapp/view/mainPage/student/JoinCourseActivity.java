@@ -22,11 +22,12 @@ import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
+import edu.sharif.mpqueraapp.view.coursePage.CoursePageActivity;
+import edu.sharif.mpqueraapp.view.mainPage.CreateCourseActivity;
 
 public class JoinCourseActivity extends AppCompatActivity {
 
     TextInputEditText courseName;
-    TextView profNameTextView;
     Button enterButton;
     RecyclerView exercisesRecyclerView;
     JoinCourseRecyclerViewAdapter courseRecyclerViewAdapter;
@@ -66,6 +67,14 @@ public class JoinCourseActivity extends AppCompatActivity {
                 else{
                     Course.coursesIds.get(courseId).studentsIds.add(student.id);
                     student.courses.add(courseId);
+
+                    Intent goToCoursePageIntent = new Intent(JoinCourseActivity.this
+                            , CoursePageActivity.class);
+                    Gson gson = new Gson();
+                    String courseJson = gson.toJson(Course.activeCourse);
+                    goToCoursePageIntent.putExtra("course", courseJson);
+                    startActivity(goToCoursePageIntent);
+
                     try {
                         Save.saveCourses(AuthActivity.mPrefs);
                     } catch (IOException e) {

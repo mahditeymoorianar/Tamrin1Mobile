@@ -47,13 +47,22 @@ public class Homework{
         // Save the progress
     }
 
-    public Homework getHomeworkById(Integer id){
+    public static Homework getHomeworkById(Integer id){
         for (Homework homework : homeworks) {
             if (homework.id == id){
                 return homework;
             }
         }
         return null;
+    }
+
+    public static Integer name2id(String title){
+        for (Homework homework : homeworks) {
+            if (homework.title.equals(title)){
+                return homework.id;
+            }
+        }
+        return -1;
     }
 
 }

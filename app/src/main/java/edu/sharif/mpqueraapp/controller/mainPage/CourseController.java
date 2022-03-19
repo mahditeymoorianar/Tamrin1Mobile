@@ -20,7 +20,7 @@ public class CourseController {
             return "You have a course with this name already!";
         }
 
-        Professor.getProf(profUsername).addNewCourse(courseName);
+        Course.activeCourse = Professor.getProf(profUsername).addNewCourse(courseName);
 
         return "success";
     }
