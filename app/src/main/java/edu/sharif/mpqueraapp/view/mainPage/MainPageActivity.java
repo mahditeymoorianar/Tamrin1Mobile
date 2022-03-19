@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,17 +15,15 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
 import java.util.LinkedList;
 
 import edu.sharif.mpqueraapp.R;
-import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
-import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 import edu.sharif.mpqueraapp.view.coursePage.CoursePageActivity;
+import edu.sharif.mpqueraapp.view.coursePage.CoursePageProfessorActivity;
 import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
 
 
@@ -61,7 +57,7 @@ public class MainPageActivity extends AppCompatActivity {
 
 
         nameTextView = findViewById(R.id.nameTextView);
-        button = findViewById(R.id.addButton);
+        button = findViewById(R.id.addHomeworkButton);
         classesRecyclerView = findViewById(R.id.classesRecyclerView);
         searchButtonMainPage = findViewById(R.id.searchButtonMainPage);
         exerciseNameInput = findViewById(R.id.exerciseNameInput);
@@ -87,52 +83,34 @@ public class MainPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-//                if (exerciseNameInput.getText() == null) {
-//
-//
-//                    if (role.equals("s")) {
-//
-//                        Intent joinCourseIntent = new Intent(MainPageActivity.this
-//                                , JoinCourseActivity.class);
-//                        joinCourseIntent.putExtra("user", user);
-//                        startActivity(joinCourseIntent);
-//
-//                    } else {
-//
-//                        Intent createClassIntent = new Intent(MainPageActivity.this,
-//                                CreateCourseActivity.class);
-//                        createClassIntent.putExtra("user", user);
-//                        startActivity(createClassIntent);
-//                    }
-//
-//                } else {
-//                    // first enter exercise name
-//                }
-
                 Integer courseId = Course.name2id(exerciseNameInput.getText().toString());
                 if (courseId == -1){}
                 else {
 
                     Course.activeCourse = Course.coursesIds.get(courseId);
 
-                    Intent goToCoursePageIntent = new Intent(MainPageActivity.this
-                            , CoursePageActivity.class);
-                    Gson gson = new Gson();
-                    String courseJson = gson.toJson(Course.activeCourse);
-                    goToCoursePageIntent.putExtra("course", courseJson);
-                    startActivity(goToCoursePageIntent);
 
+                    if (role.equals("s")) {
 
-                    try {
-                        Save.saveCourses(AuthActivity.mPrefs);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                        Intent goToCoursePageIntent = new Intent(MainPageActivity.this
+                                , CoursePageActivity.class);
+                        Gson gson = new Gson();
+                        String courseJson = gson.toJson(Course.activeCourse);
+                        goToCoursePageIntent.putExtra("course", courseJson);
+                        startActivity(goToCoursePageIntent);
+
+                    } else {
+
+                        Intent goToCoursePageProfessorIntent = new Intent(MainPageActivity.this
+                                , CoursePageProfessorActivity.class);
+                        Gson gson = new Gson();
+                        String courseJson = gson.toJson(Course.activeCourse);
+                        String userJson = gson.toJson(Student.activeStudent);
+                        goToCoursePageProfessorIntent.putExtra("course", courseJson);
+                        goToCoursePageProfessorIntent.putExtra("user", userJson);
+                        startActivity(goToCoursePageProfessorIntent);
                     }
-                    try {
-                        Save.saveStudents(AuthActivity.mPrefs);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+
                 }
 
             }

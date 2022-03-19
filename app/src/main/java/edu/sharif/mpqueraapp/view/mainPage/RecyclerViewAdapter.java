@@ -42,6 +42,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.courseName.setText(courses.get(position).courseName);
 
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
     }
 
     @Override
@@ -49,16 +57,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return courses.size();
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView courseName;
+//        OneNoteListener oneNoteListener;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             courseName = itemView.findViewById(R.id.itemTextView);
         }
-
 
     }
 }

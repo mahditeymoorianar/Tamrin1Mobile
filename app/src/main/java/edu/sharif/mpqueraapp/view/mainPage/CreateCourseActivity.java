@@ -10,6 +10,7 @@ import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
 import edu.sharif.mpqueraapp.view.coursePage.CoursePageActivity;
+import edu.sharif.mpqueraapp.view.coursePage.CoursePageProfessorActivity;
 import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
 
 import android.annotation.SuppressLint;
@@ -60,10 +61,12 @@ public class CreateCourseActivity extends AppCompatActivity {
                     } else {
 
                         Intent goToCoursePageIntent = new Intent(CreateCourseActivity.this
-                                , CoursePageActivity.class);
+                                , CoursePageProfessorActivity.class);
                         Gson gson = new Gson();
                         String json = gson.toJson(Course.activeCourse);
+                        String userJson = gson.toJson(Professor.activeProf);
                         goToCoursePageIntent.putExtra("course", json);
+                        goToCoursePageIntent.putExtra("user", userJson);
                         startActivity(goToCoursePageIntent);
 
                     }
