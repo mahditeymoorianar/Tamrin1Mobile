@@ -29,9 +29,9 @@ import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
  * create an instance of this fragment.
  */
 public class StudentHomeworkFragment extends Fragment {
-    public HomeworkAnswer homeworkAnswer = null;
-    public Homework homework = null;
-    public Student student;
+    public static HomeworkAnswer homeworkAnswer = null;
+    public static Homework homework = null;
+    public static Student student;
     // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //    private static final String ARG_PARAM1 = "param1";
@@ -77,6 +77,8 @@ public class StudentHomeworkFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 //        TODO : show the title of the homework
+        student = Student.activeStudent;
+        homeworkAnswer = homework.getStudentsAnswer(student.id);
         TextView titleTextView = (TextView) container.findViewById(R.id.homeworkTitleTextView);
         if (homework != null) {
             titleTextView.setText(homework.title);

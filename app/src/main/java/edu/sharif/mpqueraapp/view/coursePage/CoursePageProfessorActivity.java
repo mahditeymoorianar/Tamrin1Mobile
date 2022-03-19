@@ -10,6 +10,7 @@ import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
+import edu.sharif.mpqueraapp.view.HomeworkCreateFragment;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 import edu.sharif.mpqueraapp.view.mainPage.MainPageActivity;
 import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseRecyclerViewAdapter;
@@ -97,7 +98,7 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
                 else {
 
                     Intent goToHomeworkPageProfessor = new Intent(CoursePageProfessorActivity.this
-                            , CoursePageActivity.class);
+                            , HomeworkCreateFragment.class);
                     Gson gson = new Gson();
                     String courseJson = gson.toJson(Course.activeCourse);
                     String userJson = gson.toJson(Professor.activeProf);

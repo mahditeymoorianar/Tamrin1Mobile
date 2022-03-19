@@ -1,11 +1,15 @@
 package edu.sharif.mpqueraapp.view.mainPage.student;
 
+import static androidx.fragment.app.FragmentManager.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -60,6 +64,7 @@ public class JoinCourseActivity extends AppCompatActivity {
 
 
         enterButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("RestrictedApi")
             @Override
             public void onClick(View view) {
                 Integer courseId = Course.name2id(courseName.getText().toString());
@@ -73,6 +78,7 @@ public class JoinCourseActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     String courseJson = gson.toJson(Course.activeCourse);
                     goToCoursePageIntent.putExtra("course", courseJson);
+                    Log.d(TAG, "onClick: !!!!");
                     startActivity(goToCoursePageIntent);
 
                     try {

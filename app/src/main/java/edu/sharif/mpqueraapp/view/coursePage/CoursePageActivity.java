@@ -5,9 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.StudentHomeworkFragment;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
+import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
@@ -74,9 +76,9 @@ public class CoursePageActivity extends AppCompatActivity {
                 if (exerciseId == -1){}
 
                 else {
-
+                    StudentHomeworkFragment.homework = Homework.getHomeworkById(exerciseId);
                     Intent goToHomeworkPageStudent = new Intent(CoursePageActivity.this
-                            , CoursePageActivity.class);
+                            , StudentHomeworkFragment.class);
                     Gson gson = new Gson();
                     String courseJson = gson.toJson(Course.activeCourse);
                     String userJson = gson.toJson(Student.activeStudent);

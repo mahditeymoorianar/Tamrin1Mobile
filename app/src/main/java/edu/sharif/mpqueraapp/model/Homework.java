@@ -65,4 +65,14 @@ public class Homework{
         return -1;
     }
 
+    public HomeworkAnswer getStudentsAnswer(int studentId) {
+        for (Integer answerId :
+                answersIds) {
+            if (HomeworkAnswer.answersIds.get(answerId).studentId == studentId) {
+                return HomeworkAnswer.answersIds.get(answerId);
+            }
+        }
+        return null;
+    }
+
 }
