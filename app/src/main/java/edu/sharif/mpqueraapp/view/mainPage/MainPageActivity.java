@@ -47,9 +47,10 @@ public class MainPageActivity extends AppCompatActivity {
 
         Gson gson = new Gson();
         Intent intent = getIntent();
-        String role = intent.getStringExtra("role");
+        role = intent.getStringExtra("role");
         String user = intent.getStringExtra("user");
         System.out.println(user);
+
 
 
         nameTextView = findViewById(R.id.nameTextView);

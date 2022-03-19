@@ -11,6 +11,7 @@ import java.util.List;
 
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.model.Course;
+import edu.sharif.mpqueraapp.model.Professor;
 
 public class JoinCourseRecyclerViewAdapter extends RecyclerView.Adapter<JoinCourseRecyclerViewAdapter.ViewHolder>{
 
@@ -37,7 +38,7 @@ public class JoinCourseRecyclerViewAdapter extends RecyclerView.Adapter<JoinCour
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.courseName.setText(courses.get(position).courseName);
-        holder.profName.setText(courses.get(position).profId);
+        holder.profName.setText(Professor.getProfById(courses.get(position).profId).name.toString());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

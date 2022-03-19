@@ -6,4 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".view.coursePage.CoursePageActivity">
 
+    <Button
+        android:id="@+id/enterButtonCoursePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Enter"
+        app:layout_constraintBottom_toTopOf="@+id/exercisesRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/exerciseNameInput"
+        android:layout_width="285dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/edit_text_bg"
+        android:hint="Exercise Name"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@id/enterButtonCoursePage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exercisesRecyclerView"
+        android:layout_width="414dp"
+        android:layout_height="556dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput" />
+
+    <TextView
+        android:id="@+id/profNameTextView"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:text="Prof Name"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/exerciseNameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

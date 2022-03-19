@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -24,8 +26,9 @@ import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 public class JoinCourseActivity extends AppCompatActivity {
 
     TextInputEditText courseName;
-    Button joinButton;
-    RecyclerView coursesRecyclerView;
+    TextView profNameTextView;
+    Button enterButton;
+    RecyclerView exercisesRecyclerView;
     JoinCourseRecyclerViewAdapter courseRecyclerViewAdapter;
 
     @Override
@@ -45,17 +48,17 @@ public class JoinCourseActivity extends AppCompatActivity {
             }
         }
 
-        courseName = findViewById(R.id.courseNameInput);
-        joinButton = findViewById(R.id.joinButton);
+        courseName = findViewById(R.id.exerciseNameInput);
+        enterButton = findViewById(R.id.enterButtonCoursePage);
 
-        coursesRecyclerView = findViewById(R.id.coursesRecyclerView);
-        coursesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        exercisesRecyclerView = findViewById(R.id.exercisesRecyclerView);
+        exercisesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         courseRecyclerViewAdapter = new JoinCourseRecyclerViewAdapter(this, courses);
-        coursesRecyclerView.setAdapter(courseRecyclerViewAdapter);
+        exercisesRecyclerView.setAdapter(courseRecyclerViewAdapter);
         courseRecyclerViewAdapter.notifyDataSetChanged();
 
 
-        joinButton.setOnClickListener(new View.OnClickListener() {
+        enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Integer courseId = Course.name2id(courseName.getText().toString());
