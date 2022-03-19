@@ -1,18 +1,27 @@
 package edu.sharif.mpqueraapp;
 
+import static androidx.fragment.app.FragmentManager.TAG;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import java.io.IOException;
+
+import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.model.Student;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +30,7 @@ import edu.sharif.mpqueraapp.model.Student;
  */
 public class StudentHomeworkFragment extends Fragment {
     public HomeworkAnswer homeworkAnswer = null;
+    public Homework homework = null;
     public Student student;
     // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,26 +72,51 @@ public class StudentHomeworkFragment extends Fragment {
 //        }
     }
 
+    @SuppressLint("RestrictedApi")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 //        TODO : show the title of the homework
-//        TODO : show the student's current answer if not null
+        TextView titleTextView = (TextView) container.findViewById(R.id.homeworkTitleTextView);
+        if (homework != null) {
+            titleTextView.setText(homework.title);
+        } else {
+            Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework homework : is null",
+                    new Exception("StudentHomeworkFragment : public static Homework homework : is null"));
+        }
+
         EditText answer = container.findViewById(R.id.answerTextEditView);
+//       show the student's current answer if not null
+        if (homeworkAnswer != null) {
+            answer.setText(homeworkAnswer.answer);
+        }
         Button submitButton = (Button) container.findViewById(R.id.submitHomeworkAnswer);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (homeworkAnswer == null) {
-//                    homeworkAnswer = new HomeworkAnswer(student.studentsId, )
-//                    TODO : create a new HomeworkAnswer
-//                    TODO : get parameters
+                    homeworkAnswer = new HomeworkAnswer(student.id, homework.id, answer.getText().toString());
+//                  save the homeworkAnswer
+                    try {
+                        Save.saveHomeworks(AuthActivity.mPrefs);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 String answerText = answer.getText().toString();
-                if (answerText == null) {
-//                    TODO : to show an error
+                if (answerText.equals("")) {
+                    Log.e(TAG, "onCreateView: StudentHomeworkFragment : answer is empty",
+                            new Exception("StudentHomeworkFragment : answer is empty"));
                 }
                 homeworkAnswer.answer = answerText;
+            }
+        });
+
+        Button deleteButton = (Button) container.findViewById(R.id.deleteButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homeworkAnswer.delete();
             }
         });
         // Inflate the layout for this fragment
