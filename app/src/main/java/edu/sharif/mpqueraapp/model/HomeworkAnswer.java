@@ -15,6 +15,11 @@ public class HomeworkAnswer {
         this.answer = answer;
         this.id = homeworkAnswerId + 1;
         homeworkAnswerId ++;
+        Homework.getHomeworkById(homeworkId).answersIds.add(this.id);
+    }
+
+    public void delete() {
+        Homework.getHomeworkById(homeworkId).answersIds.remove(this);
     }
 
 
