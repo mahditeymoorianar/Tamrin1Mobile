@@ -11,7 +11,7 @@ public class Homework{
     public LinkedList<Integer> answersIds;
     public int id;
     public static LinkedList<Homework> homeworks = new LinkedList<>();
-//    public static HashMap<Integer, Homework> homeworksIds = new HashMap<>();
+    public static HashMap<Integer, Homework> homeworksIds = new HashMap<>();
 
     public Homework(int courseId) {
         this.courseId = courseId;

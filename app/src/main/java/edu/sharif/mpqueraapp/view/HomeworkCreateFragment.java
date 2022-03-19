@@ -9,9 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Homework;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +29,7 @@ public class HomeworkCreateFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static Homework homework = null;
+    public static Homework homework = null;
     private static int courseId = 0;
 
     // TODO: Rename and change types of parameters
@@ -81,11 +86,21 @@ public class HomeworkCreateFragment extends Fragment {
                     homework = new Homework(courseId,
                             homeworkTitle.getText().toString(),
                             homeworkDescription.getText().toString());
-                    // TODO : to save the homework in the database
+                    // to save the homework in the database
+                    try {
+                        Save.saveHomeworks(AuthActivity.mPrefs);
+                    } catch (IOException e) {
+//                        Toast toast = new Toast("")
+                    }
                 } else {
                     homework.title = homeworkTitle.getText().toString();
                     homework.description = homeworkDescription.getText().toString();
-                    // TODO : to save the homework in the database
+                    // to save the homework in the database
+                    try {
+                        Save.saveHomeworks(AuthActivity.mPrefs);
+                    } catch (IOException e) {
+//                        Toast toast = new Toast("")
+                    }
                 }
             }
         });
