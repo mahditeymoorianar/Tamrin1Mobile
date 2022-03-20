@@ -23,10 +23,22 @@ public class Load {
         Gson gson = new Gson();
         String json = mPrefs.getString("students", "");
         Student.students = gson.fromJson(json, listType);
+
+        gson = new Gson();
+        listType = new TypeToken<LinkedList<Integer>>(){}.getType();
+        String studentLastId = mPrefs.getString("StudentId", "");
+        Student.lastId = Integer.parseInt(gson.fromJson(studentLastId, listType));
+
         listType = new TypeToken<LinkedList<Professor>>(){}.getType();
         gson = new Gson();
         json = mPrefs.getString("professors", "");
         Professor.professors = gson.fromJson(json, listType);
+
+        gson = new Gson();
+        listType = new TypeToken<LinkedList<Integer>>(){}.getType();
+        String professorLastId = mPrefs.getString("ProfessorId", "");
+        Professor.lastId = Integer.parseInt(gson.fromJson(professorLastId, listType));
+
         if (Professor.professors == null){
             Professor.professors = new LinkedList<>();
         }
@@ -44,6 +56,12 @@ public class Load {
         Gson gson = new Gson();
         String json = mPrefs.getString("courses", "");
         Course.courses = gson.fromJson(json, listType);
+
+        gson = new Gson();
+        listType = new TypeToken<LinkedList<Integer>>(){}.getType();
+        String courseLastId = mPrefs.getString("CourseId", "");
+        Course.courseId = Integer.parseInt(gson.fromJson(courseLastId, listType));
+
         if (Course.courses == null){
             Course.courses = new LinkedList<>();
         }
@@ -60,6 +78,12 @@ public class Load {
         Gson gson = new Gson();
         String json = mPrefs.getString("homeworks", "");
         Homework.homeworks = gson.fromJson(json, listType);
+
+        gson = new Gson();
+        listType = new TypeToken<LinkedList<Integer>>(){}.getType();
+        String studentLastId = mPrefs.getString("HomeworkId", "");
+        Homework.homeworkId = Integer.parseInt(gson.fromJson(studentLastId, listType));
+
         if (Homework.homeworks == null){
             Homework.homeworks = new LinkedList<>();
         }
