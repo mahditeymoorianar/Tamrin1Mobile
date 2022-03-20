@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import edu.sharif.mpqueraapp.HomeworkCreateActivity;
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.StudentHomeworkFragment;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
@@ -44,7 +46,7 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         String userJson = intent.getStringExtra("user");
         String courseJson = intent.getStringExtra("course");
         Course course = gson.fromJson(courseJson, new TypeToken<Course>(){}.getType());
-
+        System.out.println(userJson+"\n-----------\n"+courseJson);
         LinkedList<Homework> homeworks = new LinkedList<>();
 
         for (Integer homeworkId : course.homeworksIds) {
@@ -68,9 +70,10 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         addHomeworkButtonProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                HomeworkCreateActivity.homework = Homework.getHomeworkById(null);
+                HomeworkCreateActivity.courseId = course.id;
                 Intent goToAddHomeworkActivity = new Intent(CoursePageProfessorActivity.this
-                        , CoursePageActivity.class);
+                        , HomeworkCreateActivity.class);
                 Gson gson = new Gson();
                 String courseJson = gson.toJson(Course.activeCourse);
                 String userJson = gson.toJson(Professor.activeProf);
@@ -90,9 +93,11 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
                 if (exerciseId == -1){}
 
                 else {
-
+//                    StudentHomeworkFragment.homework = Homework.getHomeworkById(exerciseId);
+                    HomeworkCreateActivity.homework = Homework.getHomeworkById(exerciseId);
+                    HomeworkCreateActivity.courseId = course.id;
                     Intent goToHomeworkPageProfessor = new Intent(CoursePageProfessorActivity.this
-                            , HomeworkCreateFragment.class);
+                            , HomeworkCreateActivity.class);
                     Gson gson = new Gson();
                     String courseJson = gson.toJson(Course.activeCourse);
                     String userJson = gson.toJson(Professor.activeProf);
