@@ -22,17 +22,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     LayoutInflater layoutInflater;
     List<Course> courses;
+    private OnNoteListener mOnNoteListener;
 
-    public RecyclerViewAdapter(Context context, List<Course> courses) {
+    public RecyclerViewAdapter(Context context, List<Course> courses, OnNoteListener onNoteListener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.courses = courses;
+        this.mOnNoteListener = onNoteListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ViewHolder(layoutInflater.inflate(R.layout.item, parent, false));
+        return new ViewHolder(layoutInflater.inflate(R.layout.item, parent, false), mOnNoteListener);
     }
 
     @Override
@@ -58,16 +60,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView courseName;
-//        OneNoteListener oneNoteListener;
+        OnNoteListener onNoteListener;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, OnNoteListener onNoteListener) {
             super(itemView);
 
             courseName = itemView.findViewById(R.id.itemTextView);
+            this.onNoteListener = onNoteListener;
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onNoteListener.onNoteClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnNoteListener {
+        void onNoteClick(int position);
+
 
     }
 }

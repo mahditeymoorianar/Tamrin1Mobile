@@ -27,7 +27,7 @@ import edu.sharif.mpqueraapp.view.coursePage.CoursePageProfessorActivity;
 import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
 
 
-public class MainPageActivity extends AppCompatActivity {
+public class MainPageActivity extends AppCompatActivity implements RecyclerViewAdapter.OnNoteListener {
 
     Professor professor;
     Student student;
@@ -39,7 +39,7 @@ public class MainPageActivity extends AppCompatActivity {
     EditText exerciseNameInput;
 
     String role;
-
+    LinkedList<Course> userCourses = new LinkedList<>();
 
 
     @Override
@@ -55,7 +55,6 @@ public class MainPageActivity extends AppCompatActivity {
         System.out.println(user);
 
 
-
         nameTextView = findViewById(R.id.nameTextView);
         button = findViewById(R.id.addHomeworkButton);
         classesRecyclerView = findViewById(R.id.classesRecyclerView);
@@ -63,16 +62,17 @@ public class MainPageActivity extends AppCompatActivity {
         exerciseNameInput = findViewById(R.id.exerciseNameInput);
 
 
-        if (role.equals("s")){
-            student = gson.fromJson(user, new TypeToken<Student>(){}.getType());
-            nameTextView.setText("Hello, "+ student.name);
+        if (role.equals("s")) {
+            student = gson.fromJson(user, new TypeToken<Student>() {
+            }.getType());
+            nameTextView.setText("Hello, " + student.name);
             if (student.courses.size() != 0) {
                 initRecyclerView(student);
             }
-        }
-        else{
-            professor = gson.fromJson(user, new TypeToken<Professor>(){}.getType());
-            nameTextView.setText("Hello, "+professor.name);
+        } else {
+            professor = gson.fromJson(user, new TypeToken<Professor>() {
+            }.getType());
+            nameTextView.setText("Hello, " + professor.name);
             if (professor.courses.size() != 0) {
                 initRecyclerView(professor);
             }
@@ -82,37 +82,8 @@ public class MainPageActivity extends AppCompatActivity {
         searchButtonMainPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Integer courseId = Course.name2id(exerciseNameInput.getText().toString());
-                if (courseId == -1){}
-                else {
-
-                    Course.activeCourse = Course.coursesIds.get(courseId);
-
-
-                    if (role.equals("s")) {
-
-                        Intent goToCoursePageIntent = new Intent(MainPageActivity.this
-                                , CoursePageActivity.class);
-                        Gson gson = new Gson();
-                        String courseJson = gson.toJson(Course.activeCourse);
-                        goToCoursePageIntent.putExtra("course", courseJson);
-                        startActivity(goToCoursePageIntent);
-
-                    } else {
-
-                        Intent goToCoursePageProfessorIntent = new Intent(MainPageActivity.this
-                                , CoursePageProfessorActivity.class);
-                        Gson gson = new Gson();
-                        String courseJson = gson.toJson(Course.activeCourse);
-                        String userJson = gson.toJson(Student.activeStudent);
-                        goToCoursePageProfessorIntent.putExtra("course", courseJson);
-                        goToCoursePageProfessorIntent.putExtra("user", userJson);
-                        startActivity(goToCoursePageProfessorIntent);
-                    }
-
-                }
-
+                goToCourseActivity(courseId);
             }
         });
 
@@ -121,15 +92,14 @@ public class MainPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (role.equals("s")){
+                if (role.equals("s")) {
 
                     Intent joinCourseIntent = new Intent(MainPageActivity.this
                             , JoinCourseActivity.class);
                     joinCourseIntent.putExtra("user", user);
                     startActivity(joinCourseIntent);
 
-                }
-                else{
+                } else {
 
                     Intent createClassIntent = new Intent(MainPageActivity.this,
                             CreateCourseActivity.class);
@@ -143,9 +113,7 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
 
-    private void initRecyclerView(User user){
-
-        LinkedList<Course> userCourses = new LinkedList<>();
+    private void initRecyclerView(User user) {
 
         if (role.equals("s")) {
             for (Course course : Course.courses) {
@@ -163,7 +131,7 @@ public class MainPageActivity extends AppCompatActivity {
         }
 
         classesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapter(this, userCourses);
+        adapter = new RecyclerViewAdapter(this, userCourses, this);
         classesRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -177,4 +145,43 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onNoteClick(int position) {
+
+        System.out.println(userCourses.get(position));
+    }
+
+    public void goToCourseActivity(Integer courseId) {
+
+
+        if (courseId == -1) {
+        } else {
+
+            Course.activeCourse = Course.coursesIds.get(courseId);
+
+
+            if (role.equals("s")) {
+
+                Intent goToCoursePageIntent = new Intent(MainPageActivity.this
+                        , CoursePageActivity.class);
+                Gson gson = new Gson();
+                String courseJson = gson.toJson(Course.activeCourse);
+                goToCoursePageIntent.putExtra("course", courseJson);
+                startActivity(goToCoursePageIntent);
+
+            } else {
+
+                Intent goToCoursePageProfessorIntent = new Intent(MainPageActivity.this
+                        , CoursePageProfessorActivity.class);
+                Gson gson = new Gson();
+                String courseJson = gson.toJson(Course.activeCourse);
+                String userJson = gson.toJson(Student.activeStudent);
+                goToCoursePageProfessorIntent.putExtra("course", courseJson);
+                goToCoursePageProfessorIntent.putExtra("user", userJson);
+                startActivity(goToCoursePageProfessorIntent);
+            }
+
+        }
+
+    }
 }

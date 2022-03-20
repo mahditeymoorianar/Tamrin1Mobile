@@ -45,6 +45,7 @@ public class JoinCourseActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String user = intent.getStringExtra("user");
         Student student = gson.fromJson(user, new TypeToken<Student>(){}.getType());
+        System.out.println(user);
 
         LinkedList<Course> courses = new LinkedList<>();
         for (Course course : Course.courses) {
