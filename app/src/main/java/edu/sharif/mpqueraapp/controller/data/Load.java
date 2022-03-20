@@ -64,6 +64,9 @@ public class Load {
             Homework.homeworks = new LinkedList<>();
         }
 
+        for (Homework homework : Homework.homeworks) {
+            Homework.homeworksIds.put(homework.id, homework);
+        }
     }
 
 }

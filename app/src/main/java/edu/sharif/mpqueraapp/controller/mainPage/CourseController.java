@@ -21,6 +21,7 @@ public class CourseController {
         }
 
         Course.activeCourse = Professor.getProf(profUsername).addNewCourse(courseName);
+        System.out.println("new added course : " + Course.activeCourse.toString());
 
         return "success";
     }

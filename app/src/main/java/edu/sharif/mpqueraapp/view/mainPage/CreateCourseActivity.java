@@ -67,6 +67,8 @@ public class CreateCourseActivity extends AppCompatActivity {
                         String userJson = gson.toJson(Professor.activeProf);
                         goToCoursePageIntent.putExtra("course", json);
                         goToCoursePageIntent.putExtra("user", userJson);
+                        System.out.println("CreateCourseActivity course json is : " + json);
+                        System.out.println("CreateCourseActivity user json is : " + json);
                         startActivity(goToCoursePageIntent);
 
                     }

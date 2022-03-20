@@ -10,7 +10,6 @@
         android:id="@+id/enterButtonCoursePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="Enter"
         app:layout_constraintBottom_toTopOf="@+id/exercisesRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,8 +55,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addHomeworkButton"
+<!--    <Button-->
+<!--        android:id="@+id/addHomeworkButtonProf"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="new homework"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addHomeworkButtonProf"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:clickable="true"

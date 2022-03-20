@@ -5,15 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.sharif.mpqueraapp.R;
-import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
-import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.HomeworkCreateFragment;
-import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
-import edu.sharif.mpqueraapp.view.mainPage.MainPageActivity;
-import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseRecyclerViewAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +21,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
 import java.util.LinkedList;
 
 public class CoursePageProfessorActivity extends AppCompatActivity {
@@ -37,12 +31,12 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
     RecyclerView exercisesRecyclerView;
     CoursePageRecyclerViewAdapter courseRecyclerViewAdapter;
     TextView profNameTextView;
-    FloatingActionButton addHomeworkButton;
+    FloatingActionButton addHomeworkButtonProf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_page);
+        setContentView(R.layout.activity_course_page_professor);
 
 
         Gson gson = new Gson();
@@ -61,7 +55,7 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         enterButtonCoursePage = findViewById(R.id.enterButtonCoursePage);
         exercisesRecyclerView = findViewById(R.id.exercisesRecyclerView);
         profNameTextView = findViewById(R.id.profNameTextView);
-        addHomeworkButton = findViewById(R.id.addHomeworkButton);
+        addHomeworkButtonProf = findViewById(R.id.addHomeworkButtonProf);
 
         profNameTextView.setText(Professor.getProfById(course.profId).name.toString());
 
@@ -71,7 +65,7 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         courseRecyclerViewAdapter.notifyDataSetChanged();
 
 
-        addHomeworkButton.setOnClickListener(new View.OnClickListener() {
+        addHomeworkButtonProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

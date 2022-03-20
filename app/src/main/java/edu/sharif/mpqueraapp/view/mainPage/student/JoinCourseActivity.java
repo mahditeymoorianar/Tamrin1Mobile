@@ -73,13 +73,7 @@ public class JoinCourseActivity extends AppCompatActivity {
                     Course.coursesIds.get(courseId).studentsIds.add(student.id);
                     student.courses.add(courseId);
 
-                    Intent goToCoursePageIntent = new Intent(JoinCourseActivity.this
-                            , CoursePageActivity.class);
-                    Gson gson = new Gson();
-                    String courseJson = gson.toJson(Course.activeCourse);
-                    goToCoursePageIntent.putExtra("course", courseJson);
-                    Log.d(TAG, "onClick: !!!!");
-                    startActivity(goToCoursePageIntent);
+                    Course.activeCourse = Course.coursesIds.get(courseId);
 
                     try {
                         Save.saveCourses(AuthActivity.mPrefs);
@@ -91,6 +85,19 @@ public class JoinCourseActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+                    Intent goToCoursePageIntent = new Intent(JoinCourseActivity.this
+                            , CoursePageActivity.class);
+                    Gson gson = new Gson();
+                    String courseJson = gson.toJson(Course.activeCourse);
+                    String userJson = gson.toJson(Student.activeStudent);
+                    goToCoursePageIntent.putExtra("course", courseJson);
+                    goToCoursePageIntent.putExtra("user", userJson);
+                    Log.d(TAG, "onClick: !!!!");
+                    System.out.println("JoinCourseActivity");
+                    System.out.println("user is : " + userJson + "finished");
+                    System.out.println("course is : " + courseJson + "finished");
+                    startActivity(goToCoursePageIntent);
                 }
             }
         });
