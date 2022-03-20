@@ -30,7 +30,7 @@ public class HomeworkCreateFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     public static Homework homework = null;
-    private static int courseId = 0;
+    public static int courseId = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;

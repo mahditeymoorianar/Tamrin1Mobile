@@ -20,6 +20,9 @@ public class Homework{
         this.answersIds = new LinkedList<>();
         this.id = homeworkId + 1;
         homeworkId ++;
+        Course.coursesIds.get(courseId).homeworksIds.add(this.id);
+        homeworksIds.put(id, this);
+        homeworks.add(this);
     }
 
     public Homework(int courseId, String title) {
@@ -29,6 +32,9 @@ public class Homework{
         this.answersIds = new LinkedList<>();
         this.id = homeworkId + 1;
         homeworkId ++;
+        Course.coursesIds.get(courseId).homeworksIds.add(this.id);
+        homeworksIds.put(id, this);
+        homeworks.add(this);
     }
 
     public Homework(int courseId, String title, String description) {
@@ -38,6 +44,9 @@ public class Homework{
         this.answersIds = new LinkedList<>();
         this.id = homeworkId + 1;
         homeworkId ++;
+        Course.coursesIds.get(courseId).homeworksIds.add(this.id);
+        homeworksIds.put(id, this);
+        homeworks.add(this);
     }
 
     public static void addAnswer(int studentId, int homeworkId, String answer){
