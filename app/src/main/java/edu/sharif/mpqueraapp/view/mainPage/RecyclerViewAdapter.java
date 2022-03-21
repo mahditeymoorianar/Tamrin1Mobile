@@ -33,8 +33,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        return new ViewHolder(layoutInflater.inflate(R.layout.item, parent, false), mOnNoteListener);
+        return new ViewHolder(layoutInflater.inflate(R.layout.item, parent,
+                false), mOnNoteListener);
     }
 
     @Override
@@ -71,13 +71,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             courseName = itemView.findViewById(R.id.itemTextView);
             this.onNoteListener = onNoteListener;
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onNoteListener.onNoteClick(getAdapterPosition());
-                    System.out.println("On Click");
-                }
-            });
         }
 
         @Override
