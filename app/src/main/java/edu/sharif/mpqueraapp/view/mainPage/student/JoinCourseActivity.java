@@ -95,7 +95,6 @@ public class JoinCourseActivity extends AppCompatActivity {
                     String userJson = gson.toJson(Student.activeStudent);
                     goToCoursePageIntent.putExtra("course", courseJson);
                     goToCoursePageIntent.putExtra("user", userJson);
-                    Log.d(TAG, "onClick: !!!!");
                     System.out.println("JoinCourseActivity");
                     System.out.println("user is : " + userJson + "finished");
                     System.out.println("course is : " + courseJson + "finished");

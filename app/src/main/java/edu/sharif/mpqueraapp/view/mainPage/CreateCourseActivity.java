@@ -45,7 +45,6 @@ public class CreateCourseActivity extends AppCompatActivity {
         Gson gson = new Gson();
         Intent intent = getIntent();
         String user = intent.getStringExtra("user");
-        Log.d(TAG, "onCreate: " + user);
         Professor professor = gson.fromJson(user, new TypeToken<Professor>(){}.getType());
 
         createButton = findViewById(R.id.createButton);
@@ -53,6 +52,7 @@ public class CreateCourseActivity extends AppCompatActivity {
         statusCreateCourse = findViewById(R.id.statusCreateCourse);
 
         createButton.setOnClickListener(new View.OnClickListener() {
+
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
@@ -63,17 +63,7 @@ public class CreateCourseActivity extends AppCompatActivity {
                     if (!response.equals("success")) {
                         statusCreateCourse.setText(response);
                     } else {
-
-                        try {
-                            Save.saveCourses(AuthActivity.mPrefs);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        try {
-                            Save.saveProfessors(AuthActivity.mPrefs);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        
 
                         Intent goToCoursePageIntent = new Intent(CreateCourseActivity.this
                                 , CoursePageProfessorActivity.class);
@@ -83,7 +73,7 @@ public class CreateCourseActivity extends AppCompatActivity {
                         goToCoursePageIntent.putExtra("course", json);
                         goToCoursePageIntent.putExtra("user", userJson);
                         System.out.println("CreateCourseActivity course json is : " + json);
-                        System.out.println("CreateCourseActivity user json is : " + json);
+                        System.out.println("CreateCourseActivity user json is : " + userJson);
                         startActivity(goToCoursePageIntent);
 
                     }
