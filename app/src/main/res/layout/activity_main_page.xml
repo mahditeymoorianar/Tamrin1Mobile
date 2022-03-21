@@ -12,25 +12,22 @@
         android:id="@+id/searchButtonMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
         android:text="@string/search"
-        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
+        app:layout_constraintBottom_toBottomOf="@+id/exerciseNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/exerciseNameInput" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/exerciseNameInput"
-        android:layout_width="191dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="254dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_bg"
         android:hint="Course Id"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
         app:layout_constraintEnd_toStartOf="@id/searchButtonMainPage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameTextView">
@@ -41,11 +38,11 @@
         android:id="@+id/classesRecyclerView"
         android:layout_width="255dp"
         android:layout_height="427dp"
-        android:layout_marginBottom="92dp"
-        app:layout_constraintTop_toBottomOf="@id/exerciseNameInput"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:scrollbarSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addHomeworkButton"
@@ -66,6 +63,7 @@
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:minHeight="48dp"
         android:text=""
