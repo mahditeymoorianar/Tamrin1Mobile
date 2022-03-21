@@ -69,8 +69,9 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
             }.getType());
             nameTextView.setText("Hello, " + student.name);
             if (student.courses.size() != 0) {
-
+                System.out.println("Courses Size");
                 initRecyclerView(student);
+
             }
         } else {
             professor = gson.fromJson(user, new TypeToken<Professor>() {
@@ -119,6 +120,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
     private void initRecyclerView(User user) {
         Load.loadCourses(AuthActivity.mPrefs);
         if (role.equals("s")) {
+            System.out.println("Courses Main Page");
             for (Course course : Course.courses) {
                 if (course.studentsIds.contains(student.id)) {
                     userCourses.add(course);

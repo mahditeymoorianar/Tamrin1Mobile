@@ -71,7 +71,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             courseName = itemView.findViewById(R.id.itemTextView);
             this.onNoteListener = onNoteListener;
 
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onNoteListener.onNoteClick(getAdapterPosition());
+                    System.out.println("On Click");
+                }
+            });
         }
 
         @Override
@@ -82,7 +88,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public interface OnNoteListener {
         void onNoteClick(int position);
-
 
     }
 }

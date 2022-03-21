@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.StudentHomeworkActivity;
 import edu.sharif.mpqueraapp.StudentHomeworkFragment;
 import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.controller.data.Save;
@@ -83,9 +84,9 @@ public class CoursePageActivity extends AppCompatActivity {
                 if (exerciseId == -1){}
 
                 else {
-                    StudentHomeworkFragment.homework = Homework.getHomeworkById(exerciseId);
+                    StudentHomeworkActivity.homework = Homework.getHomeworkById(exerciseId);
                     Intent goToHomeworkPageStudent = new Intent(CoursePageActivity.this
-                            , StudentHomeworkFragment.class);
+                            , StudentHomeworkActivity.class);
                     Gson gson = new Gson();
                     String courseJson = gson.toJson(Course.activeCourse);
                     String userJson = gson.toJson(Student.activeStudent);

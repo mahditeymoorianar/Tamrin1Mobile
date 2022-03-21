@@ -75,7 +75,6 @@ public class JoinCourseActivity extends AppCompatActivity {
                 else{
                     Course.coursesIds.get(courseId).studentsIds.add(student.id);
                     student.courses.add(courseId);
-
                     Course.activeCourse = Course.coursesIds.get(courseId);
 
                     try {
