@@ -44,6 +44,7 @@ public class HomeworkCreateActivity extends AppCompatActivity {
                     // to save the homework in the database
                     try {
                         Save.saveHomeworks(AuthActivity.mPrefs);
+                        Save.saveCourses(AuthActivity.mPrefs);
                     } catch (IOException e) {
                         e.printStackTrace();
 //                        Toast toast = new Toast("")
@@ -55,6 +56,7 @@ public class HomeworkCreateActivity extends AppCompatActivity {
                     // to save the homework in the database
                     try {
                         Save.saveHomeworks(AuthActivity.mPrefs);
+                        Save.saveCourses(AuthActivity.mPrefs);
                     } catch (IOException e) {
 //                        Toast toast = new Toast("")
                         e.printStackTrace();

@@ -57,6 +57,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
 //                  save the homeworkAnswer
                     try {
                         Save.saveHomeworks(AuthActivity.mPrefs);
+                        Save.saveCourses(AuthActivity.mPrefs);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

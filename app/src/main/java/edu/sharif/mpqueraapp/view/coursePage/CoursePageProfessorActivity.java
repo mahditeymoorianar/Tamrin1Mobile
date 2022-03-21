@@ -55,7 +55,22 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         System.out.println(userJson+"\n-----------\n"+courseJson);
         LinkedList<Homework> homeworks = new LinkedList<>();
 
+
+
         Load.loadHomeworks(AuthActivity.mPrefs);
+
+        System.out.println(course.homeworksIds.toString());
+
+        System.out.println("courses: ");
+        for (Course course : Course.courses) {
+
+            System.out.println(course.courseName + " " + course.id);
+
+        }
+        System.out.println("courseIds: ");
+        System.out.println(Course.coursesIds.toString());
+
+
         for (Integer homeworkId : course.homeworksIds) {
             homeworks.add(Homework.getHomeworkById(homeworkId));
         }
