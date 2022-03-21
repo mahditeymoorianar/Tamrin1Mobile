@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 
+import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
@@ -29,6 +30,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Load.loadHomeworks(AuthActivity.mPrefs);
         setContentView(R.layout.activity_student_homework);
 
         //        TODO : show the title of the homework
@@ -54,6 +56,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (homeworkAnswer == null) {
                     homeworkAnswer = new HomeworkAnswer(student.id, homework.id, answer.getText().toString());
+                    student.homeworkAnswers.add(homeworkAnswer.id);
 //
                 } else {
                     homeworkAnswer.answer = answer.getText().toString();
@@ -62,6 +65,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
                 try {
                     Save.saveHomeworks(AuthActivity.mPrefs);
                     Save.saveCourses(AuthActivity.mPrefs);
+                    Save.saveHomeworks(AuthActivity.mPrefs);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

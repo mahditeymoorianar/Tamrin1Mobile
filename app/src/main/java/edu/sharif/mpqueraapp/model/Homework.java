@@ -8,27 +8,27 @@ public class Homework{
     public String title;
     public String description;
     public int courseId;
-    public LinkedList<Integer> answersIds;
+    public LinkedList<HomeworkAnswer> answers;
     public int id;
     public static LinkedList<Homework> homeworks = new LinkedList<>();
     public static HashMap<Integer, Homework> homeworksIds = new HashMap<>();
 
-    @Override
+    /*@Override
     public String toString() {
         return "Homework{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", courseId=" + courseId +
-                ", answersIds=" + answersIds +
+                ", answersIds=" + a +
                 ", id=" + id +
                 '}';
-    }
+    }*/
 
     public Homework(int courseId, String title, String description) {
         this.courseId = courseId;
         this.title = title;
         this.description = description;
-        this.answersIds = new LinkedList<>();
+        this.answers = new LinkedList<>();
         this.id = lastHomeworkId + 1;
         lastHomeworkId ++;
         Course.coursesIds.get(courseId).homeworksIds.add(this.id);
@@ -62,10 +62,10 @@ public class Homework{
     }
 
     public HomeworkAnswer getStudentsAnswer(int studentId) {
-        for (Integer answerId :
-                answersIds) {
-            if (HomeworkAnswer.answersIds.get(answerId).studentId == studentId) {
-                return HomeworkAnswer.answersIds.get(answerId);
+        for (HomeworkAnswer answer :
+                answers) {
+            if (answer.studentId == studentId) {
+                return answer;
             }
         }
         return null;

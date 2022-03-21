@@ -19,11 +19,11 @@ public class HomeworkAnswer {
         this.id = homeworkAnswerId + 1;
         homeworkAnswerId ++;
         answersIds.put(id, this);
-        Homework.getHomeworkById(homeworkId).answersIds.add(this.id);
+        Homework.getHomeworkById(homeworkId).answers.add(this);
     }
 
     public void delete() {
-        Homework.getHomeworkById(homeworkId).answersIds.remove(this);
+        Homework.getHomeworkById(homeworkId).answers.remove(this);
     }
 
 
