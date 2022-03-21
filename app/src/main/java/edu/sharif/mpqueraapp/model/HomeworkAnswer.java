@@ -23,7 +23,8 @@ public class HomeworkAnswer {
     }
 
     public void delete() {
-        Homework.getHomeworkById(homeworkId).answersIds.remove(this);
+        Homework.getHomeworkById(homeworkId).answersIds.remove(new Integer(this.id));
+        answersIds.remove(new Integer(this.id));
     }
 
 
