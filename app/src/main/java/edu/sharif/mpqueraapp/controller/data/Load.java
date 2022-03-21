@@ -31,8 +31,15 @@ public class Load {
 
         gson = new Gson();
         Type type = new TypeToken<Integer>(){}.getType();
-        String studentLastId = mPrefs.getString("lastUserId", "");
-        User.lastId = Integer.parseInt(gson.fromJson(studentLastId, type));
+        String userLastId = mPrefs.getString("lastUserId", "");
+
+        if (gson.fromJson(userLastId, type) != null){
+            User.lastId = gson.fromJson(userLastId, type);
+        }
+        else{
+            User.lastId = 0;
+        }
+
 
         if (Professor.professors == null){
             Professor.professors = new LinkedList<>();
@@ -40,6 +47,7 @@ public class Load {
         if (Student.students == null){
             Student.students = new LinkedList<>();
         }
+
 
 
         Log.d(Professor.professors.size()+"", "loadUsers: ");
@@ -55,9 +63,12 @@ public class Load {
         gson = new Gson();
         Type type = new TypeToken<Integer>(){}.getType();
         String courseLastId = mPrefs.getString("lastCourseId", "");
-        Course.lastCourseId = Integer.parseInt(gson.fromJson(courseLastId, type));
-
-
+        if (gson.fromJson(courseLastId, type) != null){
+            Course.lastCourseId = gson.fromJson(courseLastId, type);
+        }
+        else{
+            Course.lastCourseId = 0;
+        }
 
         if (Course.courses == null){
             Course.courses = new LinkedList<>();
@@ -79,7 +90,13 @@ public class Load {
         gson = new Gson();
         Type type = new TypeToken<Integer>(){}.getType();
         String homeworkLastId = mPrefs.getString("lastHomeworkId", "");
-        Homework.lastHomeworkId = Integer.parseInt(gson.fromJson(homeworkLastId, type));
+        if (gson.fromJson(homeworkLastId, type) != null){
+            Homework.lastHomeworkId = gson.fromJson(homeworkLastId, type);
+        }
+        else{
+            Homework.lastHomeworkId = 0;
+        }
+
 
         if (Homework.homeworks == null){
             Homework.homeworks = new LinkedList<>();

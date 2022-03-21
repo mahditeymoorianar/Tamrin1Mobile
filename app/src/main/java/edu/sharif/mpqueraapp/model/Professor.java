@@ -37,7 +37,7 @@ public class Professor extends User{
     public static Professor getProfById(Integer id){
         for (Professor professor : professors) {
             if (professor.id == id){
-                return professor;
+                 return professor;
             }
         }
         return null;
@@ -48,8 +48,10 @@ public class Professor extends User{
         System.out.println(courses);
         System.out.println(Course.coursesIds);
         for (Integer courseId : courses) {
-            if (Course.coursesIds.get(courseId).courseName.equals(courseName)) {
-                return true;
+            if(Course.coursesIds.get(courseId) != null){
+                if (Course.coursesIds.get(courseId).courseName.equals(courseName)) {
+                    return true;
+                }
             }
         }
         return false;
