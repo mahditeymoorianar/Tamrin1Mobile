@@ -61,6 +61,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+                //        TODO : else
                 String answerText = answer.getText().toString();
                 if (answerText.equals("")) {
                     Log.e(TAG, "onCreateView: StudentHomeworkFragment : answer is empty",

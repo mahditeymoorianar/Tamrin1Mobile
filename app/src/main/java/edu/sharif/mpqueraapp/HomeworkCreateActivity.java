@@ -10,6 +10,7 @@ import android.widget.EditText;
 import java.io.IOException;
 
 import edu.sharif.mpqueraapp.controller.data.Save;
+import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
@@ -20,6 +21,10 @@ public class HomeworkCreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homework_create);
+
+
+        System.out.println("Homework create course is : " + Course.coursesIds.get(courseId).toString());
+
 
         EditText homeworkTitle = findViewById(R.id.newHomeworkTitleTextView);
         EditText homeworkDescription = findViewById(R.id.homeworkDescriptionEditText);
@@ -43,6 +48,7 @@ public class HomeworkCreateActivity extends AppCompatActivity {
                         e.printStackTrace();
 //                        Toast toast = new Toast("")
                     }
+                    System.out.println("Homework create course is : " + Course.coursesIds.get(courseId).toString());
                 } else {
                     homework.title = homeworkTitle.getText().toString();
                     homework.description = homeworkDescription.getText().toString();
