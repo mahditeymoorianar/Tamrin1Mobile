@@ -12,21 +12,19 @@
         android:id="@+id/searchButtonMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="176dp"
         android:text="@string/search"
-        app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/exerciseNameInput"
         android:layout_width="191dp"
         android:layout_height="48dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="48dp"
 
         android:background="@drawable/edit_text_bg"
         android:hint="Course Id"
@@ -38,9 +36,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/classesRecyclerView"
-        android:layout_width="255dp"
-        android:layout_height="427dp"
-        android:layout_marginBottom="92dp"
+        android:layout_width="197dp"
+        android:layout_height="225dp"
+        android:layout_marginBottom="232dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,8 +68,8 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/exerciseNameInput"
         app:layout_constraintEnd_toStartOf="@+id/addHomeworkButton"
-        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.253" />
 </androidx.constraintlayout.widget.ConstraintLayout>

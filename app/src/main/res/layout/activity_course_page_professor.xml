@@ -23,7 +23,7 @@
         android:layout_width="285dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="104dp"
         android:background="@drawable/edit_text_bg"
         android:hint="Exercise Name"
         android:minHeight="48dp"
@@ -35,14 +35,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exercisesRecyclerView"
-        android:layout_width="252dp"
-        android:layout_height="463dp"
+        android:layout_width="222dp"
+        android:layout_height="231dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.173" />
 
     <TextView
         android:id="@+id/profNameTextView"
@@ -64,7 +63,7 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addHomeworkButtonProf"
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -75,6 +74,7 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exercisesRecyclerView"
+        app:layout_constraintVertical_bias="0.93"
         app:srcCompat="@android:drawable/ic_menu_add"
         tools:ignore="SpeakableTextPresentCheck" />
 

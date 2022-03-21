@@ -148,7 +148,10 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
     @Override
     public void onNoteClick(int position) {
 
-        System.out.println(userCourses.get(position));
+//        System.out.println(userCourses.get(position).courseName);
+
+        System.out.println("one item clicked!!");
+
     }
 
     public void goToCourseActivity(Integer courseId) {
