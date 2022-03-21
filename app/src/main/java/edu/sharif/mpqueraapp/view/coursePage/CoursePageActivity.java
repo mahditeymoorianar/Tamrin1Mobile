@@ -60,6 +60,7 @@ public class CoursePageActivity extends AppCompatActivity {
 
 
         Load.loadHomeworks(AuthActivity.mPrefs);
+        Load.loadHomeworksAnswers(AuthActivity.mPrefs);
 
         System.out.println(course.homeworksIds.toString());
         LinkedList<Homework> homeworks = new LinkedList<>();

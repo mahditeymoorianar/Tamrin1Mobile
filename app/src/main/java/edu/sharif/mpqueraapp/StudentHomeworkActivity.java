@@ -30,7 +30,6 @@ public class StudentHomeworkActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Load.loadHomeworks(AuthActivity.mPrefs);
         setContentView(R.layout.activity_student_homework);
 
         //        TODO : show the title of the homework
@@ -40,8 +39,10 @@ public class StudentHomeworkActivity extends AppCompatActivity {
         if (homework != null) {
             titleTextView.setText(homework.title);
         } else {
-            Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework homework : is null",
-                    new Exception("StudentHomeworkFragment : public static Homework homework : is null"));
+            Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework" +
+                            " homework : is null",
+                    new Exception("StudentHomeworkFragment : public static Homework homework " +
+                            ": is null"));
         }
 
         EditText answer = findViewById(R.id.answerTextEditView);
@@ -66,6 +67,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
                     Save.saveHomeworks(AuthActivity.mPrefs);
                     Save.saveCourses(AuthActivity.mPrefs);
                     Save.saveHomeworks(AuthActivity.mPrefs);
+                    Save.saveHomeworksAnswers(AuthActivity.mPrefs);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

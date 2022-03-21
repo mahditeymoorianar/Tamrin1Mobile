@@ -1,11 +1,13 @@
 package edu.sharif.mpqueraapp.model;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class HomeworkAnswer {
 
     public static int homeworkAnswerId = 0;
     public static HashMap<Integer, HomeworkAnswer> answersIds = new HashMap<Integer, HomeworkAnswer>();
+    public static LinkedList<HomeworkAnswer> homeworkAnswers = new LinkedList<>();
     public String answer;
     public int studentId;
     public int homeworkId;
@@ -19,11 +21,14 @@ public class HomeworkAnswer {
         this.id = homeworkAnswerId + 1;
         homeworkAnswerId ++;
         answersIds.put(id, this);
-        Homework.getHomeworkById(homeworkId).answers.add(this);
+        Homework.getHomeworkById(homeworkId).answersIds.add(this.id);
+
+        homeworkAnswers.add(this);
+        answersIds.put(this.id, this);
     }
 
     public void delete() {
-        Homework.getHomeworkById(homeworkId).answers.remove(this);
+        Homework.getHomeworkById(homeworkId).answersIds.remove(this.id);
     }
 
 
