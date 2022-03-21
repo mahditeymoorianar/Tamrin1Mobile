@@ -54,15 +54,16 @@ public class StudentHomeworkActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (homeworkAnswer == null) {
                     homeworkAnswer = new HomeworkAnswer(student.id, homework.id, answer.getText().toString());
-//                  save the homeworkAnswer
-                    try {
-                        Save.saveHomeworks(AuthActivity.mPrefs);
-                        Save.saveCourses(AuthActivity.mPrefs);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+//
+                } else {
+                    homeworkAnswer.answer = answer.getText().toString();
                 }
-                //        TODO : else
+                // save the homeworkAnswer
+                try {
+                    Save.saveHomeworks(AuthActivity.mPrefs);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 String answerText = answer.getText().toString();
                 if (answerText.equals("")) {
                     Log.e(TAG, "onCreateView: StudentHomeworkFragment : answer is empty",

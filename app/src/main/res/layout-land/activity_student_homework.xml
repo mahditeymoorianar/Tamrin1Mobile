@@ -10,7 +10,9 @@
         android:id="@+id/answerTextEditView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/edit_text_bg"
         android:hint="@string/answer_text"
@@ -19,16 +21,18 @@
         android:paddingStart="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeworkTitleTextView"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintStart_toEndOf="@+id/submitHomeworkAnswer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.5" />
 
     <TextView
         android:id="@+id/homeworkTitleTextView"
-        android:layout_width="294dp"
-        android:layout_height="55dp"
+        android:layout_width="258dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/edit_text_bg"
         android:padding="10dp"
@@ -36,8 +40,6 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,22 +47,25 @@
         android:id="@+id/submitHomeworkAnswer"
         android:layout_width="216dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/homeworkTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/homeworkTitleTextView" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#F40000"
         android:text="@string/delete"
         app:layout_constraintBottom_toTopOf="@+id/submitHomeworkAnswer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/submitHomeworkAnswer"
+        app:layout_constraintStart_toStartOf="@+id/submitHomeworkAnswer"
+        app:layout_constraintTop_toBottomOf="@+id/homeworkTitleTextView"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

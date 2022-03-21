@@ -11,51 +11,53 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
         android:text="Enter"
-        app:layout_constraintBottom_toBottomOf="@+id/exerciseNameInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
-        app:layout_constraintTop_toTopOf="@+id/exerciseNameInput" />
+        app:layout_constraintEnd_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintStart_toStartOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/exerciseNameInput"
-        android:layout_width="0dp"
+        android:layout_width="252dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/edit_text_bg"
         android:hint="Exercise Name"
+        android:maxLines="1"
         android:minHeight="48dp"
         android:padding="10dp"
-        app:layout_constraintEnd_toStartOf="@id/enterButtonCoursePage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profNameTextView">
+        app:layout_constraintTop_toBottomOf="@+id/profNameTextView"
+        tools:layout_editor_absoluteX="10dp">
 
     </com.google.android.material.textfield.TextInputEditText>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exercisesRecyclerView"
-        android:layout_width="337dp"
-        android:layout_height="491dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/edit_text_bg"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/profNameTextView"
-        android:layout_width="109dp"
+        android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginTop="40dp"
         android:text="Prof Name"
+        android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintStart_toStartOf="@+id/exerciseNameInput"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
