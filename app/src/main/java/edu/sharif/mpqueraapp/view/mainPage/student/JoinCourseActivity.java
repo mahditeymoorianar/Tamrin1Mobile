@@ -92,7 +92,7 @@ public class JoinCourseActivity extends AppCompatActivity {
                             , CoursePageActivity.class);
                     Gson gson = new Gson();
                     String courseJson = gson.toJson(Course.activeCourse);
-                    String userJson = gson.toJson(Student.activeStudent);
+                    String userJson = gson.toJson(student);
                     goToCoursePageIntent.putExtra("course", courseJson);
                     goToCoursePageIntent.putExtra("user", userJson);
                     System.out.println("JoinCourseActivity");

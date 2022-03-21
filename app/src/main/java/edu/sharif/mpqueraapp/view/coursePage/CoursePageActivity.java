@@ -39,6 +39,9 @@ public class CoursePageActivity extends AppCompatActivity {
     CoursePageRecyclerViewAdapter courseRecyclerViewAdapter;
     TextView profNameTextView;
 
+    Student student;
+    Course course;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +53,8 @@ public class CoursePageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String userJson = intent.getStringExtra("user");
         String courseJson = intent.getStringExtra("course");
-        Course course = gson.fromJson(courseJson, new TypeToken<Course>(){}.getType());
-        Student student = gson.fromJson(userJson, new TypeToken<Student>(){}.getType());
+        course = gson.fromJson(courseJson, new TypeToken<Course>(){}.getType());
+        student = gson.fromJson(userJson, new TypeToken<Student>(){}.getType());
         System.out.println(userJson);
         System.out.println(courseJson);
 
@@ -88,8 +91,8 @@ public class CoursePageActivity extends AppCompatActivity {
                     Intent goToHomeworkPageStudent = new Intent(CoursePageActivity.this
                             , StudentHomeworkActivity.class);
                     Gson gson = new Gson();
-                    String courseJson = gson.toJson(Course.activeCourse);
-                    String userJson = gson.toJson(Student.activeStudent);
+                    String courseJson = gson.toJson(course);
+                    String userJson = gson.toJson(student);
                     goToHomeworkPageStudent.putExtra("course", courseJson);
                     goToHomeworkPageStudent.putExtra("user", userJson);
                     startActivity(goToHomeworkPageStudent);

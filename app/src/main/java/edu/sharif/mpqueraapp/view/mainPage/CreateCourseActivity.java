@@ -69,7 +69,7 @@ public class CreateCourseActivity extends AppCompatActivity {
                                 , CoursePageProfessorActivity.class);
                         Gson gson = new Gson();
                         String json = gson.toJson(Course.activeCourse);
-                        String userJson = gson.toJson(Professor.activeProf);
+                        String userJson = gson.toJson(Professor.activeProf);       // Do not change this line!
                         goToCoursePageIntent.putExtra("course", json);
                         goToCoursePageIntent.putExtra("user", userJson);
                         System.out.println("CreateCourseActivity course json is : " + json);

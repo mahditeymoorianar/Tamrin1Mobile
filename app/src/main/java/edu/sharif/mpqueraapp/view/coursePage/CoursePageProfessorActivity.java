@@ -11,6 +11,7 @@ import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
+import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.HomeworkCreateFragment;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
@@ -37,17 +38,20 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
     TextView profNameTextView;
     FloatingActionButton addHomeworkButtonProf;
 
+    Course course;
+    Professor professor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_page_professor);
 
-
         Gson gson = new Gson();
         Intent intent = getIntent();
         String userJson = intent.getStringExtra("user");
         String courseJson = intent.getStringExtra("course");
-        Course course = gson.fromJson(courseJson, new TypeToken<Course>(){}.getType());
+        course = gson.fromJson(courseJson, new TypeToken<Course>(){}.getType());
+        professor = gson.fromJson(userJson, new TypeToken<Professor>(){}.getType());
         System.out.println(userJson+"\n-----------\n"+courseJson);
         LinkedList<Homework> homeworks = new LinkedList<>();
 
@@ -78,8 +82,10 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
                 Intent goToAddHomeworkActivity = new Intent(CoursePageProfessorActivity.this
                         , HomeworkCreateActivity.class);
                 Gson gson = new Gson();
-                String courseJson = gson.toJson(Course.activeCourse);
-                String userJson = gson.toJson(Professor.activeProf);
+                String courseJson = gson.toJson(course);
+                String userJson = gson.toJson(professor);
+                System.out.println("addHomework coursePageProfessor course is : " + courseJson);
+                System.out.println("addHomework coursePageProfessor user is : " + userJson);
                 goToAddHomeworkActivity.putExtra("course", courseJson);
                 goToAddHomeworkActivity.putExtra("user", userJson);
                 startActivity(goToAddHomeworkActivity);
@@ -102,8 +108,10 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
                     Intent goToHomeworkPageProfessor = new Intent(CoursePageProfessorActivity.this
                             , HomeworkCreateActivity.class);
                     Gson gson = new Gson();
-                    String courseJson = gson.toJson(Course.activeCourse);
-                    String userJson = gson.toJson(Professor.activeProf);
+                    String courseJson = gson.toJson(course);
+                    String userJson = gson.toJson(professor);
+                    System.out.println("enterButton coursePageProfessor course is : " + courseJson);
+                    System.out.println("enterButton coursePageProfessor user is : " + userJson);
                     goToHomeworkPageProfessor.putExtra("course", courseJson);
                     goToHomeworkPageProfessor.putExtra("user", userJson);
                     startActivity(goToHomeworkPageProfessor);
