@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/exerciseNameInput"
@@ -27,12 +27,13 @@
         android:layout_height="48dp"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="56dp"
-
         android:background="@drawable/edit_text_bg"
         android:hint="Course Id"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/classesRecyclerView"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toStartOf="@id/searchButtonMainPage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView">
 
     </com.google.android.material.textfield.TextInputEditText>
 
@@ -41,6 +42,7 @@
         android:layout_width="255dp"
         android:layout_height="427dp"
         android:layout_marginBottom="92dp"
+        app:layout_constraintTop_toBottomOf="@id/exerciseNameInput"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
