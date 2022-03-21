@@ -28,14 +28,6 @@ public class Course {
     }
 
 
-    public void addStudent(String courseId, Integer studentID){
-
-        if (!coursesIds.get(courseId).studentsIds.contains(studentID)){
-            coursesIds.get(courseId).studentsIds.add(studentID);
-        }
-
-    }
-
 
     public static Integer name2id(String name){
         for (Course course : courses) {

@@ -55,6 +55,8 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
         role = intent.getStringExtra("role");
         String user = intent.getStringExtra("user");
         System.out.println(user);
+        System.out.println("User last id : " + User.lastId);
+        System.out.println("Course last id : " + Course.lastCourseId);
 
 
         nameTextView = findViewById(R.id.nameTextView);
@@ -68,18 +70,20 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
             student = gson.fromJson(user, new TypeToken<Student>() {
             }.getType());
             nameTextView.setText("Hello, " + student.name);
-            if (student.courses.size() != 0) {
-                System.out.println("Courses Size");
-                initRecyclerView(student);
-
-            }
+//            if (student.courses.size() != 0) {
+//                System.out.println("Courses Size");
+//                initRecyclerView(student);
+//
+//            }
+            initRecyclerView(student);
         } else {
             professor = gson.fromJson(user, new TypeToken<Professor>() {
             }.getType());
             nameTextView.setText("Hello, " + professor.name);
-            if (professor.courses.size() != 0) {
-                initRecyclerView(professor);
-            }
+//            if (professor.courses.size() != 0) {
+//                initRecyclerView(professor);
+//            }
+            initRecyclerView(professor);
         }
 
 
@@ -118,6 +122,8 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
 
 
     private void initRecyclerView(User user) {
+
+        System.out.println("initRecyclerView MainPageActivity **********");
         Load.loadCourses(AuthActivity.mPrefs);
         if (role.equals("s")) {
             System.out.println("Courses Main Page");

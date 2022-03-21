@@ -20,6 +20,7 @@ public class HomeworkCreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homework_create);
+
         EditText homeworkTitle = findViewById(R.id.newHomeworkTitleTextView);
         EditText homeworkDescription = findViewById(R.id.homeworkDescriptionEditText);
         Button button = findViewById(R.id.professorSubmitButtonView);
