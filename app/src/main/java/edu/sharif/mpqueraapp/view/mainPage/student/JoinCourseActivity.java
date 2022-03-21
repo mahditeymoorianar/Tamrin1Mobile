@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Student;
@@ -48,6 +49,7 @@ public class JoinCourseActivity extends AppCompatActivity {
         System.out.println(user);
 
         LinkedList<Course> courses = new LinkedList<>();
+        Load.loadCourses(AuthActivity.mPrefs);
         for (Course course : Course.courses) {
             if (!course.studentsIds.contains(student.id)){
                 courses.add(course);

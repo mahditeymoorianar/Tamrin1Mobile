@@ -4,11 +4,13 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.controller.mainPage.CourseController;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 import edu.sharif.mpqueraapp.view.coursePage.CoursePageActivity;
 import edu.sharif.mpqueraapp.view.coursePage.CoursePageProfessorActivity;
 import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
@@ -26,6 +28,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import org.w3c.dom.Text;
+
+import java.io.IOException;
 
 public class CreateCourseActivity extends AppCompatActivity {
 
@@ -59,6 +63,17 @@ public class CreateCourseActivity extends AppCompatActivity {
                     if (!response.equals("success")) {
                         statusCreateCourse.setText(response);
                     } else {
+
+                        try {
+                            Save.saveCourses(AuthActivity.mPrefs);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            Save.saveProfessors(AuthActivity.mPrefs);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
                         Intent goToCoursePageIntent = new Intent(CreateCourseActivity.this
                                 , CoursePageProfessorActivity.class);

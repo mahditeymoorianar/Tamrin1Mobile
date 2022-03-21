@@ -18,10 +18,12 @@ import com.google.gson.reflect.TypeToken;
 import java.util.LinkedList;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 import edu.sharif.mpqueraapp.view.coursePage.CoursePageActivity;
 import edu.sharif.mpqueraapp.view.coursePage.CoursePageProfessorActivity;
 import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
@@ -67,6 +69,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
             }.getType());
             nameTextView.setText("Hello, " + student.name);
             if (student.courses.size() != 0) {
+
                 initRecyclerView(student);
             }
         } else {
@@ -114,7 +117,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
 
 
     private void initRecyclerView(User user) {
-
+        Load.loadCourses(AuthActivity.mPrefs);
         if (role.equals("s")) {
             for (Course course : Course.courses) {
                 if (course.studentsIds.contains(student.id)) {

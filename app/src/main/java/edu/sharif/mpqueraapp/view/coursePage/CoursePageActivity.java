@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.StudentHomeworkFragment;
+import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
@@ -53,7 +54,7 @@ public class CoursePageActivity extends AppCompatActivity {
         System.out.println(userJson);
         System.out.println(courseJson);
 
-
+        Load.loadHomeworks(AuthActivity.mPrefs);
         LinkedList<Homework> homeworks = new LinkedList<>();
 
         for (Integer homeworkId : course.homeworksIds) {

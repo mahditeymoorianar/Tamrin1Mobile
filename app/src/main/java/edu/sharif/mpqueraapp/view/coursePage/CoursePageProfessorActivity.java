@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import edu.sharif.mpqueraapp.HomeworkCreateActivity;
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.StudentHomeworkFragment;
+import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.view.HomeworkCreateFragment;
+import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,6 +51,7 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         System.out.println(userJson+"\n-----------\n"+courseJson);
         LinkedList<Homework> homeworks = new LinkedList<>();
 
+        Load.loadHomeworks(AuthActivity.mPrefs);
         for (Integer homeworkId : course.homeworksIds) {
             homeworks.add(Homework.getHomeworkById(homeworkId));
         }
@@ -70,7 +73,7 @@ public class CoursePageProfessorActivity extends AppCompatActivity {
         addHomeworkButtonProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HomeworkCreateActivity.homework = Homework.getHomeworkById(null);
+                HomeworkCreateActivity.homework = null;
                 HomeworkCreateActivity.courseId = course.id;
                 Intent goToAddHomeworkActivity = new Intent(CoursePageProfessorActivity.this
                         , HomeworkCreateActivity.class);
