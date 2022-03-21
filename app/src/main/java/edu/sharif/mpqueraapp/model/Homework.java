@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Homework{
-    public static int homeworkId = 0;
+    public static int lastHomeworkId = 0;
     public String title;
     public String description;
     public int courseId;
@@ -18,8 +18,8 @@ public class Homework{
         title = "untitled";
         description = "No description";
         this.answersIds = new LinkedList<>();
-        this.id = homeworkId + 1;
-        homeworkId ++;
+        this.id = lastHomeworkId + 1;
+        lastHomeworkId ++;
         Course.coursesIds.get(courseId).homeworksIds.add(this.id);
         homeworksIds.put(id, this);
         homeworks.add(this);
@@ -30,8 +30,8 @@ public class Homework{
         this.title = title;
         description = "No description";
         this.answersIds = new LinkedList<>();
-        this.id = homeworkId + 1;
-        homeworkId ++;
+        this.id = lastHomeworkId + 1;
+        lastHomeworkId ++;
         Course.coursesIds.get(courseId).homeworksIds.add(this.id);
         homeworksIds.put(id, this);
         homeworks.add(this);
@@ -42,8 +42,8 @@ public class Homework{
         this.title = title;
         this.description = description;
         this.answersIds = new LinkedList<>();
-        this.id = homeworkId + 1;
-        homeworkId ++;
+        this.id = lastHomeworkId + 1;
+        lastHomeworkId ++;
         Course.coursesIds.get(courseId).homeworksIds.add(this.id);
         homeworksIds.put(id, this);
         homeworks.add(this);

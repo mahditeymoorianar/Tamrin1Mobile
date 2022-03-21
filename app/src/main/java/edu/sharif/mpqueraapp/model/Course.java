@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class Course {
 
-    public static int courseId = 0;
+    public static int lastCourseId = 0;
     public int profId;
     public LinkedList<Integer> studentsIds;
     public LinkedList<Integer> homeworksIds;
@@ -19,11 +19,11 @@ public class Course {
     public Course(int profId, String courseName) {
         this.courseName = courseName;
         this.profId = profId;
-        this.id = courseId + 1;
+        this.id = lastCourseId + 1;
         this.studentsIds = new LinkedList<>();
         this.homeworksIds = new LinkedList<>();
-        courseId++;
-        coursesIds.put(courseId, this);
+        lastCourseId++;
+        coursesIds.put(lastCourseId, this);
         courses.add(this);
     }
 
