@@ -8,29 +8,31 @@
 
     <Button
         android:id="@+id/enterButtonCoursePage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="56dp"
 
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         android:text="Join"
-        app:layout_constraintBottom_toBottomOf="@+id/exerciseNameInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/exerciseNameInput" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/exerciseNameInput"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="53dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/edit_text_bg"
         android:hint="Course Name"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/enterButtonCoursePage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -43,12 +45,13 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/edit_text_bg"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

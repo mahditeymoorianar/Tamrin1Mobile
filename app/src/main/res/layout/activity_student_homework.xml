@@ -9,8 +9,9 @@
     <EditText
         android:id="@+id/answerTextEditView"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/edit_text_bg"
         android:hint="@string/answer_text"
         android:inputType="text"
@@ -18,6 +19,7 @@
         android:paddingStart="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeworkTitleTextView"
@@ -43,22 +45,22 @@
         android:id="@+id/submitHomeworkAnswer"
         android:layout_width="216dp"
         android:layout_height="78dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deleteButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#F40000"
         android:text="@string/delete"
+        app:layout_constraintBottom_toTopOf="@+id/submitHomeworkAnswer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerTextEditView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,8 @@
         android:id="@+id/newHomeworkTitleTextView"
         android:layout_width="283dp"
         android:layout_height="55dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"
         android:inputType="textPersonName"
@@ -18,16 +19,17 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/homeworkDescriptionEditText"
-        android:layout_width="351dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"
@@ -40,20 +42,23 @@
         android:paddingRight="10sp"
         android:paddingBottom="10sp"
         android:text="@string/homework_default_description"
-        app:layout_constraintBottom_toTopOf="@+id/professorSubmitButtonView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newHomeworkTitleTextView" />
+        app:layout_constraintStart_toEndOf="@+id/newHomeworkTitleTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/professorSubmitButtonView"
         android:layout_width="164dp"
         android:layout_height="67dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/newHomeworkTitleTextView"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/newHomeworkTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/newHomeworkTitleTextView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

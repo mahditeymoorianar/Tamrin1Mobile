@@ -10,54 +10,56 @@
         android:id="@+id/enterButtonCoursePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Enter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/exerciseNameInput"
-        app:layout_constraintTop_toTopOf="@id/exerciseNameInput"
-        app:layout_constraintStart_toEndOf="@id/exerciseNameInput"
-        tools:layout_editor_absoluteY="60dp" />
+        app:layout_constraintEnd_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintStart_toStartOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/exerciseNameInput"
         android:layout_width="285dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/edit_text_bg"
         android:hint="Exercise Name"
         android:lines="1"
         android:minHeight="48dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@id/enterButtonCoursePage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profNameTextView">
+        app:layout_constraintTop_toBottomOf="@+id/profNameTextView">
 
     </com.google.android.material.textfield.TextInputEditText>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exercisesRecyclerView"
-        android:layout_width="309dp"
-        android:layout_height="461dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="0dp"
+        android:layout_height="372dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/edit_text_bg"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:paddingEnd="10dp"
         android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseNameInput" />
+        app:layout_constraintStart_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/profNameTextView"
         android:layout_width="109dp"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:text="Prof Name"
+        android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/exerciseNameInput"
+        app:layout_constraintStart_toStartOf="@+id/exerciseNameInput"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    <Button-->
@@ -73,12 +75,12 @@
         android:id="@+id/addHomeworkButtonProf"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add"
         tools:ignore="SpeakableTextPresentCheck" />
 
