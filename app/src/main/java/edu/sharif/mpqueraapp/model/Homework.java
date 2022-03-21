@@ -13,28 +13,15 @@ public class Homework{
     public static LinkedList<Homework> homeworks = new LinkedList<>();
     public static HashMap<Integer, Homework> homeworksIds = new HashMap<>();
 
-    public Homework(int courseId) {
-        this.courseId = courseId;
-        title = "untitled";
-        description = "No description";
-        this.answersIds = new LinkedList<>();
-        this.id = lastHomeworkId + 1;
-        lastHomeworkId ++;
-        Course.coursesIds.get(courseId).homeworksIds.add(this.id);
-        homeworksIds.put(id, this);
-        homeworks.add(this);
-    }
-
-    public Homework(int courseId, String title) {
-        this.courseId = courseId;
-        this.title = title;
-        description = "No description";
-        this.answersIds = new LinkedList<>();
-        this.id = lastHomeworkId + 1;
-        lastHomeworkId ++;
-        Course.coursesIds.get(courseId).homeworksIds.add(this.id);
-        homeworksIds.put(id, this);
-        homeworks.add(this);
+    @Override
+    public String toString() {
+        return "Homework{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", courseId=" + courseId +
+                ", answersIds=" + answersIds +
+                ", id=" + id +
+                '}';
     }
 
     public Homework(int courseId, String title, String description) {

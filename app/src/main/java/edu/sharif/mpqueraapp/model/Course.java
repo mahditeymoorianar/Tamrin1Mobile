@@ -15,6 +15,16 @@ public class Course {
     public static Course activeCourse;
     public int id;
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "profId=" + profId +
+                ", studentsIds=" + studentsIds +
+                ", homeworksIds=" + homeworksIds +
+                ", courseName='" + courseName + '\'' +
+                ", id=" + id +
+                '}';
+    }
 
     public Course(int profId, String courseName) {
         this.courseName = courseName;

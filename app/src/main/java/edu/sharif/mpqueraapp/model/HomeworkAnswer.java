@@ -27,5 +27,14 @@ public class HomeworkAnswer {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "HomeworkAnswer{" +
+                "answer='" + answer + '\'' +
+                ", studentId=" + studentId +
+                ", homeworkId=" + homeworkId +
+                ", id=" + id +
+                ", grade=" + grade +
+                '}';
+    }
 }
