@@ -42,5 +42,6 @@
     <string name="no_gade_give">No Grade</string>
 =======
     <string name="title_activity_professor_homework" translatable="false">ProfessorHomeworkActivity</string>
->>>>>>> c74680ff428e58bdedd9db1675b6f01b6dab5d45
+    <string name="grade">Grade</string>
+    >>>>>>> c74680ff428e58bdedd9db1675b6f01b6dab5d45
 </resources>

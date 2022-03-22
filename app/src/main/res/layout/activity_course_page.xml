@@ -38,8 +38,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exercisesRecyclerView"
         android:layout_width="337dp"
-        android:layout_height="491dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/edit_text_bg"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

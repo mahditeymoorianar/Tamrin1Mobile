@@ -28,4 +28,5 @@
     <string name="student">دانشجو</string>
     <string name="answers">پاسخ‌ها</string>
     <string name="no_gade_give">هنوز تمره داده نشده</string>
+    <string name="grade">نمره</string>
 </resources>
