@@ -2,10 +2,12 @@ package edu.sharif.mpqueraapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.IOException;
 
@@ -62,6 +64,15 @@ public class HomeworkCreateActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+            }
+        });
+
+        TextView showAnswersTextView = findViewById(R.id.showAnswersTextView);
+        showAnswersTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToShowHomeworkAnswers = new Intent(HomeworkCreateActivity.this, ShowHomeworkAnswersActivity.class);
+                startActivity(goToShowHomeworkAnswers);
             }
         });
     }

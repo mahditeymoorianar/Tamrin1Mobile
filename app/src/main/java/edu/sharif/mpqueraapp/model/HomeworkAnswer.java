@@ -20,9 +20,9 @@ public class HomeworkAnswer {
         this.answer = answer;
         this.id = homeworkAnswerId + 1;
         homeworkAnswerId ++;
+        this.grade = -1;
         answersIds.put(id, this);
         Homework.getHomeworkById(homeworkId).answersIds.add(this.id);
-
         homeworkAnswers.add(this);
         answersIds.put(this.id, this);
     }

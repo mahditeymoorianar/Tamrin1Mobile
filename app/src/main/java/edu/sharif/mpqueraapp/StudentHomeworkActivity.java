@@ -32,19 +32,19 @@ public class StudentHomeworkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_homework);
 
-        //        TODO : show the title of the homework
+
         student = Student.activeStudent;
         homeworkAnswer = homework.getStudentsAnswer(student.id);
         TextView titleTextView = (TextView) findViewById(R.id.homeworkTitleTextView);
         if (homework != null) {
             titleTextView.setText(homework.title);
+            ((TextView) findViewById(R.id.gradeTextView)).setText(homework.getStudentsAnswer(student.id).grade+"");
         } else {
             Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework" +
                             " homework : is null",
                     new Exception("StudentHomeworkFragment : public static Homework homework " +
                             ": is null"));
         }
-
         EditText answer = findViewById(R.id.answerTextEditView);
 //       show the student's current answer if not null
         if (homeworkAnswer != null) {

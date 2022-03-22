@@ -37,4 +37,13 @@ public class Student extends User{
         }
         return null;
     }
+
+    public static Student getStudentById(int id) {
+        for (Student student :
+                students) {
+            if (student.id == id)
+                return student;
+        }
+        return null;
+    }
 }

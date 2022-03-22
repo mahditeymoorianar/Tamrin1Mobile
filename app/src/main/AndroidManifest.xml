@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MPQueraApp">
         <activity
+            android:name=".ScoreGivingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowHomeworkAnswersActivity"
+            android:exported="false" />
+        <activity
             android:name=".StudentHomeworkActivity"
             android:exported="false" />
         <activity

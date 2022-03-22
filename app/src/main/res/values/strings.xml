@@ -37,4 +37,6 @@
     <string name="search" translatable="false">Search</string>
     <string name="title_activity_course_page_professor" translatable="false">CoursePageProfessorActivity</string>
     <string name="title_activity_course_page_prof" translatable="false">CoursePageProf</string>
+    <string name="answers">answers</string>
+    <string name="no_gade_give">No Grade</string>
 </resources>

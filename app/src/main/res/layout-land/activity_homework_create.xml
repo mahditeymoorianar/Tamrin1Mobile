@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomeworkCreateActivity">
 
+    <TextView
+        android:id="@+id/showAnswersTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/answers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/newHomeworkTitleTextView"
         android:layout_width="283dp"
