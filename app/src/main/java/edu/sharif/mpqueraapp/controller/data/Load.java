@@ -11,6 +11,7 @@ import java.util.LinkedList;
 
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
+import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
@@ -104,6 +105,32 @@ public class Load {
 
         for (Homework homework : Homework.homeworks) {
             Homework.homeworksIds.put(homework.id, homework);
+        }
+    }
+
+    public static void loadHomeworksAnswers(SharedPreferences mPrefs) {
+        Type listType = new TypeToken<LinkedList<HomeworkAnswer>>(){}.getType();
+        Gson gson = new Gson();
+        String json = mPrefs.getString("homeworkAnswers", "");
+        HomeworkAnswer.homeworkAnswers = gson.fromJson(json, listType);
+
+        gson = new Gson();
+        Type type = new TypeToken<Integer>(){}.getType();
+        String homeworkLastId = mPrefs.getString("lastHomeworkAnswerId", "");
+        if (gson.fromJson(homeworkLastId, type) != null){
+            HomeworkAnswer.homeworkAnswerId = gson.fromJson(homeworkLastId, type);
+        }
+        else{
+            HomeworkAnswer.homeworkAnswerId = 0;
+        }
+
+
+        if (HomeworkAnswer.homeworkAnswers == null){
+            HomeworkAnswer.homeworkAnswers = new LinkedList<>();
+        }
+
+        for (HomeworkAnswer answer : HomeworkAnswer.homeworkAnswers) {
+            HomeworkAnswer.answersIds.put(answer.id, answer);
         }
     }
 

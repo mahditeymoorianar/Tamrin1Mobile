@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
+import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.model.User;
@@ -59,6 +60,18 @@ public class Save {
 
         String lastHomeworkId = gson.toJson(Homework.lastHomeworkId);
         prefsEditor.putString("lastHomeworkId", lastHomeworkId);
+
+        prefsEditor.commit();
+    }
+
+    public static void saveHomeworksAnswers(SharedPreferences mPrefs) throws IOException {
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(HomeworkAnswer.homeworkAnswers);
+        prefsEditor.putString("homeworkAnswers", json);
+
+        String lastHomeworkAnswerId = gson.toJson(HomeworkAnswer.homeworkAnswerId);
+        prefsEditor.putString("lastHomeworkAnswerId", lastHomeworkAnswerId);
 
         prefsEditor.commit();
     }

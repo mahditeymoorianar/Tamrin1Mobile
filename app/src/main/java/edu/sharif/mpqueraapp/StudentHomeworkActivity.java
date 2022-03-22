@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 
+import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
@@ -38,8 +39,10 @@ public class StudentHomeworkActivity extends AppCompatActivity {
         if (homework != null) {
             titleTextView.setText(homework.title);
         } else {
-            Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework homework : is null",
-                    new Exception("StudentHomeworkFragment : public static Homework homework : is null"));
+            Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework" +
+                            " homework : is null",
+                    new Exception("StudentHomeworkFragment : public static Homework homework " +
+                            ": is null"));
         }
 
         EditText answer = findViewById(R.id.answerTextEditView);
@@ -54,6 +57,7 @@ public class StudentHomeworkActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (homeworkAnswer == null) {
                     homeworkAnswer = new HomeworkAnswer(student.id, homework.id, answer.getText().toString());
+                    student.homeworkAnswers.add(homeworkAnswer.id);
 //
                 } else {
                     homeworkAnswer.answer = answer.getText().toString();
@@ -62,6 +66,8 @@ public class StudentHomeworkActivity extends AppCompatActivity {
                 try {
                     Save.saveHomeworks(AuthActivity.mPrefs);
                     Save.saveCourses(AuthActivity.mPrefs);
+                    Save.saveHomeworks(AuthActivity.mPrefs);
+                    Save.saveHomeworksAnswers(AuthActivity.mPrefs);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
