@@ -25,19 +25,31 @@ import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseRecyclerViewAdapter
 
 public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<ProfessorHomeworkActivityAdaptor.ViewHolder> {
 
-    private List<HomeworkAnswer> answers;
-    private LayoutInflater inflater;
+    LayoutInflater layoutInflater;
+    List<HomeworkAnswer> answers;
 
     public ProfessorHomeworkActivityAdaptor(Context context, List<HomeworkAnswer> answers) {
+        this.layoutInflater = LayoutInflater.from(context);
         this.answers = answers;
-        this.inflater = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
-    public ProfessorHomeworkActivityAdaptor.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ProfessorHomeworkActivityAdaptor.ViewHolder(inflater.inflate(R.layout.fragment_course_recycler_view_item, parent
-                , false));
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        return new ViewHolder(layoutInflater.inflate(R.layout.item,
+                parent, false));
+    }
+
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        if (getItemCount() != 0) {
+            holder.studentId.setText(answers.get(position).studentId+"");
+
+        }
+
     }
 
     @Override
@@ -45,24 +57,16 @@ public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<Profe
         return answers.size();
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ProfessorHomeworkActivityAdaptor.ViewHolder holder, int position) {
-        if (getItemCount() != 0){
-            holder.studentId.setText(answers.get(position).studentId);
-            holder.grade.setText(answers.get(position).grade);
-        }
-    }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView studentId;
-        TextView grade;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            studentId = itemView.findViewById(R.id.courseName);
-            grade = itemView.findViewById(R.id.profName);
+
+            studentId = itemView.findViewById(R.id.itemTextView);
         }
+
 
     }
 

@@ -30,7 +30,6 @@ public class ShowHomeworkAnswersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_homework_answers);
 
-
         answersRecyclerView = findViewById(R.id.studentsAnswersRecyclerView);
         answersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
