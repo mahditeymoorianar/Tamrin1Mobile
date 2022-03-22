@@ -16,16 +16,16 @@
             android:label="@string/title_activity_professor_homework"
             android:theme="@style/Theme.MPQueraApp.NoActionBar" />
         <activity
-            android:name=".ScoreGivingActivity"
+            android:name=".view.coursePage.homework.ScoreGivingActivity"
             android:exported="false" />
         <activity
-            android:name=".ShowHomeworkAnswersActivity"
+            android:name=".view.coursePage.homework.ShowHomeworkAnswersActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentHomeworkActivity"
+            android:name=".view.coursePage.homework.StudentHomeworkActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeworkCreateActivity"
+            android:name=".view.coursePage.homework.HomeworkCreateActivity"
             android:exported="false" />
         <activity
             android:name=".view.coursePage.CoursePageProfessorActivity"

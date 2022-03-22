@@ -4,15 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import edu.sharif.mpqueraapp.HomeworkCreateActivity;
+import edu.sharif.mpqueraapp.view.coursePage.homework.HomeworkCreateActivity;
 import edu.sharif.mpqueraapp.R;
-import edu.sharif.mpqueraapp.StudentHomeworkFragment;
 import edu.sharif.mpqueraapp.controller.data.Load;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Professor;
-import edu.sharif.mpqueraapp.model.Student;
-import edu.sharif.mpqueraapp.view.HomeworkCreateFragment;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 import android.content.Intent;

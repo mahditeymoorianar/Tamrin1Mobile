@@ -1,4 +1,4 @@
-package edu.sharif.mpqueraapp;
+package edu.sharif.mpqueraapp.view.coursePage.homework;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 
 import java.util.LinkedList;
 
+import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.view.ProfessorHomeworkActivityAdaptor;

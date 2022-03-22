@@ -1,4 +1,4 @@
-package edu.sharif.mpqueraapp;
+package edu.sharif.mpqueraapp.view.coursePage.homework;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.Student;
 

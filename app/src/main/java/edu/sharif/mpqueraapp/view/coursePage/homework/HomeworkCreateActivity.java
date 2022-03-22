@@ -1,4 +1,4 @@
-package edu.sharif.mpqueraapp;
+package edu.sharif.mpqueraapp.view.coursePage.homework;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 
+import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;

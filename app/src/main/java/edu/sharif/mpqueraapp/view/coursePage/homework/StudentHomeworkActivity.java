@@ -1,4 +1,4 @@
-package edu.sharif.mpqueraapp;
+package edu.sharif.mpqueraapp.view.coursePage.homework;
 
 import static androidx.fragment.app.FragmentManager.TAG;
 
@@ -11,10 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import java.io.IOException;
-
-import edu.sharif.mpqueraapp.controller.data.Load;
+import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
@@ -22,9 +20,11 @@ import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 public class StudentHomeworkActivity extends AppCompatActivity {
+
     public static HomeworkAnswer homeworkAnswer = null;
     public static Homework homework = null;
     public static Student student;
+
     // TODO: Rename parameter argument
     @SuppressLint("RestrictedApi")
     @Override
@@ -32,19 +32,19 @@ public class StudentHomeworkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_homework);
 
-
+        //        TODO : show the title of the homework
         student = Student.activeStudent;
         homeworkAnswer = homework.getStudentsAnswer(student.id);
         TextView titleTextView = (TextView) findViewById(R.id.homeworkTitleTextView);
         if (homework != null) {
             titleTextView.setText(homework.title);
-            ((TextView) findViewById(R.id.gradeTextView)).setText(homework.getStudentsAnswer(student.id).grade+"");
         } else {
             Log.e(TAG, "onCreateView: StudentHomeworkFragment : public static Homework" +
                             " homework : is null",
                     new Exception("StudentHomeworkFragment : public static Homework homework " +
                             ": is null"));
         }
+
         EditText answer = findViewById(R.id.answerTextEditView);
 //       show the student's current answer if not null
         if (homeworkAnswer != null) {

@@ -47,8 +47,10 @@ public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<Profe
 
     @Override
     public void onBindViewHolder(@NonNull ProfessorHomeworkActivityAdaptor.ViewHolder holder, int position) {
-        holder.studentId.setText(answers.get(position).studentId);
-        holder.grade.setText(answers.get(position).grade);
+        if (getItemCount() != 0){
+            holder.studentId.setText(answers.get(position).studentId);
+            holder.grade.setText(answers.get(position).grade);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

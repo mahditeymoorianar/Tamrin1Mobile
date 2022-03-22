@@ -1,4 +1,4 @@
-package edu.sharif.mpqueraapp;
+package edu.sharif.mpqueraapp.view.coursePage.homework;
 
 import static androidx.fragment.app.FragmentManager.TAG;
 
@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 
+import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
@@ -88,7 +89,7 @@ public class StudentHomeworkFragment extends Fragment {
         }
 
         EditText answer = container.findViewById(R.id.answerTextEditView);
-//       show the student's current answer if not null
+//      show the student's current answer if not null
         if (homeworkAnswer != null) {
             answer.setText(homeworkAnswer.answer);
         }

@@ -5,17 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.sharif.mpqueraapp.R;
-import edu.sharif.mpqueraapp.StudentHomeworkActivity;
-import edu.sharif.mpqueraapp.StudentHomeworkFragment;
+import edu.sharif.mpqueraapp.view.coursePage.homework.StudentHomeworkActivity;
 import edu.sharif.mpqueraapp.controller.data.Load;
-import edu.sharif.mpqueraapp.controller.data.Save;
 import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
-import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.model.Professor;
 import edu.sharif.mpqueraapp.model.Student;
 import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
-import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseRecyclerViewAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,7 +23,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
 import java.util.LinkedList;
 
 public class CoursePageActivity extends AppCompatActivity {
