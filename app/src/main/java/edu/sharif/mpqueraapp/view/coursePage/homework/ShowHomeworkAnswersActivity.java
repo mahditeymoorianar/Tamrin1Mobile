@@ -15,7 +15,6 @@ import java.util.LinkedList;
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
-import edu.sharif.mpqueraapp.view.ProfessorHomeworkActivityAdaptor;
 
 public class ShowHomeworkAnswersActivity extends AppCompatActivity {
 
@@ -47,9 +46,15 @@ public class ShowHomeworkAnswersActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int studentId = Integer.parseInt(((EditText) findViewById(R.id.studentIdEditText)).getText().toString());
-                Intent intent = new Intent(ShowHomeworkAnswersActivity.this, ScoreGivingActivity.class);
+
+                int studentId = Integer.parseInt(((EditText) findViewById(R.id.studentIdEditText))
+                        .getText().toString());
+                ScoreGivingActivity.studentId = studentId;
+                ScoreGivingActivity.homework = Homework.getHomeworkById(homeworkId);
+                Intent intent = new Intent(ShowHomeworkAnswersActivity.this,
+                        ScoreGivingActivity.class);
                 startActivity(intent);
+
             }
         });
     }

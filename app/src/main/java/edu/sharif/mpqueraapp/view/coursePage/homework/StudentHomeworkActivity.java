@@ -25,6 +25,8 @@ public class StudentHomeworkActivity extends AppCompatActivity {
     public static Homework homework = null;
     public static Student student;
 
+    TextView gradeTextView;
+
     // TODO: Rename parameter argument
     @SuppressLint("RestrictedApi")
     @Override
@@ -33,6 +35,9 @@ public class StudentHomeworkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_homework);
 
         //        TODO : show the title of the homework
+
+        gradeTextView = findViewById(R.id.gradeTextView);
+
         student = Student.activeStudent;
         homeworkAnswer = homework.getStudentsAnswer(student.id);
         TextView titleTextView = (TextView) findViewById(R.id.homeworkTitleTextView);
@@ -49,6 +54,11 @@ public class StudentHomeworkActivity extends AppCompatActivity {
 //       show the student's current answer if not null
         if (homeworkAnswer != null) {
             answer.setText(homeworkAnswer.answer);
+            System.out.println(homeworkAnswer.grade);
+            if (homeworkAnswer.grade != -1){
+                gradeTextView.setText(homeworkAnswer.grade + "");
+            }
+
         }
         Button submitButton = (Button) findViewById(R.id.submitHomeworkAnswer);
         submitButton.setOnClickListener(new View.OnClickListener() {

@@ -28,7 +28,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:text="@string/student_id"
+        android:hint="Student ID"
         app:layout_constraintEnd_toStartOf="@+id/searchImageButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

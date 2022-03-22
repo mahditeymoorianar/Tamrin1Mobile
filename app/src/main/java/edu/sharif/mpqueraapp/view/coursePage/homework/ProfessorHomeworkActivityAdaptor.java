@@ -1,27 +1,16 @@
-package edu.sharif.mpqueraapp.view;
+package edu.sharif.mpqueraapp.view.coursePage.homework;
 
 import android.content.Context;
-import android.content.Intent;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-
 import edu.sharif.mpqueraapp.R;
-import edu.sharif.mpqueraapp.model.Course;
-import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
-import edu.sharif.mpqueraapp.model.Professor;
-import edu.sharif.mpqueraapp.view.coursePage.CoursePageRecyclerViewAdapter;
-import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseRecyclerViewAdapter;
+import edu.sharif.mpqueraapp.model.Student;
 
 public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<ProfessorHomeworkActivityAdaptor.ViewHolder> {
 
@@ -37,7 +26,7 @@ public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<Profe
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ViewHolder(layoutInflater.inflate(R.layout.item,
+        return new ViewHolder(layoutInflater.inflate(R.layout.fragment_course_recycler_view_item,
                 parent, false));
     }
 
@@ -47,7 +36,7 @@ public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<Profe
 
         if (getItemCount() != 0) {
             holder.studentId.setText(answers.get(position).studentId+"");
-
+            holder.studentName.setText(Student.getStudentById(answers.get(position).studentId).name);
         }
 
     }
@@ -60,11 +49,13 @@ public class ProfessorHomeworkActivityAdaptor extends RecyclerView.Adapter<Profe
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView studentId;
+        TextView studentName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            studentId = itemView.findViewById(R.id.profName);
+            studentName = itemView.findViewById(R.id.courseName);
 
-            studentId = itemView.findViewById(R.id.itemTextView);
         }
 
 
