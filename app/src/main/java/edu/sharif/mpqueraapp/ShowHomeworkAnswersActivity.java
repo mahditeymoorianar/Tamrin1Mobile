@@ -3,6 +3,7 @@ package edu.sharif.mpqueraapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,7 +24,8 @@ public class ShowHomeworkAnswersActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int studentId = Integer.parseInt(((EditText) findViewById(R.id.studentIdEditText)).getText().toString());
-                //TODO
+                Intent intent = new Intent(ShowHomeworkAnswersActivity.this, ScoreGivingActivity.class);
+                startActivity(intent);
             }
         });
     }
