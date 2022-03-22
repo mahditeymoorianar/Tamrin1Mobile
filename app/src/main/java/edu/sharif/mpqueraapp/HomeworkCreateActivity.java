@@ -19,6 +19,12 @@ import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 public class HomeworkCreateActivity extends AppCompatActivity {
     public static Homework homework = null;
     public static int courseId = 0;
+
+    TextView showAnswersTextView;
+    EditText homeworkDescription;
+    Button button;
+    EditText homeworkTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +34,9 @@ public class HomeworkCreateActivity extends AppCompatActivity {
         System.out.println("Homework create course is : " + Course.coursesIds.get(courseId).toString());
 
 
-        EditText homeworkTitle = findViewById(R.id.newHomeworkTitleTextView);
-        EditText homeworkDescription = findViewById(R.id.homeworkDescriptionEditText);
-        Button button = findViewById(R.id.professorSubmitButtonView);
+        homeworkTitle = findViewById(R.id.newHomeworkTitleTextView);
+         homeworkDescription = findViewById(R.id.homeworkDescriptionEditText);
+         button = findViewById(R.id.professorSubmitButtonView);
         if (homework != null) {
             homeworkTitle.setText(homework.title);
             homeworkDescription.setText(homework.description);
@@ -67,11 +73,12 @@ public class HomeworkCreateActivity extends AppCompatActivity {
             }
         });
 
-        TextView showAnswersTextView = findViewById(R.id.showAnswersTextView);
+        showAnswersTextView = findViewById(R.id.showAnswersTextView);
         showAnswersTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent goToShowHomeworkAnswers = new Intent(HomeworkCreateActivity.this, ShowHomeworkAnswersActivity.class);
+                ShowHomeworkAnswersActivity.homeworkId = homework.id;
                 startActivity(goToShowHomeworkAnswers);
             }
         });

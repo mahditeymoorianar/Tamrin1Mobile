@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="124dp"
         android:background="@drawable/edit_text_bg"
-        android:hint="Homework Title"
+        android:hint="Student Number"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

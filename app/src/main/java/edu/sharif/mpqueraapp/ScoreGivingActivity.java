@@ -18,7 +18,8 @@ public class ScoreGivingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_giving);
-        ((TextView) findViewById(R.id.studentsNameTextView)).setText(Student.getStudentById(studentId).name+" "+
+        ((TextView) findViewById(R.id.studentsNameTextView)).setText
+                (Student.getStudentById(studentId).name+" "+
                 Student.getStudentById(studentId).lastName+" : "+
                 studentId);
         ((TextView) findViewById(R.id.studentsAnswerTextView)).setText(homework.getStudentsAnswer(studentId).answer);
