@@ -1,6 +1,7 @@
 package edu.sharif.mpqueraapp.view.coursePage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 import edu.sharif.mpqueraapp.R;
+import edu.sharif.mpqueraapp.StudentHomeworkActivity;
 import edu.sharif.mpqueraapp.model.Homework;
 
 
@@ -40,6 +44,14 @@ public class CoursePageRecyclerViewAdapter extends RecyclerView.Adapter<CoursePa
             holder.courseName.setText(exercises.get(position).title); // kolliat chetore dar in vaziat ke
 
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
     @Override

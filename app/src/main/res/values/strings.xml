@@ -37,6 +37,10 @@
     <string name="search" translatable="false">Search</string>
     <string name="title_activity_course_page_professor" translatable="false">CoursePageProfessorActivity</string>
     <string name="title_activity_course_page_prof" translatable="false">CoursePageProf</string>
+<<<<<<< HEAD
     <string name="answers">answers</string>
     <string name="no_gade_give">No Grade</string>
+=======
+    <string name="title_activity_professor_homework" translatable="false">ProfessorHomeworkActivity</string>
+>>>>>>> c74680ff428e58bdedd9db1675b6f01b6dab5d45
 </resources>
