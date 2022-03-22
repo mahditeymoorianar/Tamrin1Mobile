@@ -86,6 +86,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
+
     public interface OnNoteListener {
         void onNoteClick(int position);
 

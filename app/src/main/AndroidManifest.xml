@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MPQueraApp">
+
+        <activity
+            android:name=".view.ProfessorHomeworkActivity"
+            android:exported="true"
+            android:label="@string/title_activity_professor_homework"
+            android:theme="@style/Theme.MPQueraApp.NoActionBar" />
         <activity
             android:name=".StudentHomeworkActivity"
             android:exported="false" />
