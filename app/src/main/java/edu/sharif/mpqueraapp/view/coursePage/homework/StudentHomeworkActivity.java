@@ -5,15 +5,21 @@ import static androidx.fragment.app.FragmentManager.TAG;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.IOException;
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.controller.data.Save;
+import edu.sharif.mpqueraapp.model.Course;
 import edu.sharif.mpqueraapp.model.Homework;
 import edu.sharif.mpqueraapp.model.HomeworkAnswer;
 import edu.sharif.mpqueraapp.model.Student;
@@ -21,9 +27,13 @@ import edu.sharif.mpqueraapp.view.authentication.AuthActivity;
 
 public class StudentHomeworkActivity extends AppCompatActivity {
 
-    public static HomeworkAnswer homeworkAnswer = null;
-    public static Homework homework = null;
-    public static Student student;
+//    public static HomeworkAnswer homeworkAnswer = null;
+//    public static Homework homework = null;
+//    public static Student student;
+
+    public Homework homework;
+    public Student student;
+    public HomeworkAnswer homeworkAnswer;
 
     TextView gradeTextView;
 
@@ -38,7 +48,17 @@ public class StudentHomeworkActivity extends AppCompatActivity {
 
         gradeTextView = findViewById(R.id.gradeTextView);
 
-        student = Student.activeStudent;
+
+        Gson gson = new Gson();
+        Intent intent = getIntent();
+        String userJson = intent.getStringExtra("user");
+        String homeworkJson = intent.getStringExtra("homework");
+        homework = gson.fromJson(homeworkJson, new TypeToken<Homework>(){}.getType());
+        student = gson.fromJson(userJson, new TypeToken<Student>(){}.getType());
+        System.out.println(userJson);
+        System.out.println(homeworkJson);
+
+
         homeworkAnswer = homework.getStudentsAnswer(student.id);
         TextView titleTextView = (TextView) findViewById(R.id.homeworkTitleTextView);
         if (homework != null) {

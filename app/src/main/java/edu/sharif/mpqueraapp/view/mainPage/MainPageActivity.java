@@ -39,6 +39,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
     RecyclerView classesRecyclerView;
     RecyclerViewAdapter adapter;
     EditText exerciseNameInput;
+    String userString;
 
     String role;
     LinkedList<Course> userCourses = new LinkedList<>();
@@ -54,6 +55,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
         Intent intent = getIntent();
         role = intent.getStringExtra("role");
         String user = intent.getStringExtra("user");
+        userString = user;
         System.out.println(user);
         System.out.println("User last id : " + User.lastId);
         System.out.println("Course last id : " + Course.lastCourseId);
@@ -70,19 +72,13 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
             student = gson.fromJson(user, new TypeToken<Student>() {
             }.getType());
             nameTextView.setText("Hello, " + student.name);
-//            if (student.courses.size() != 0) {
-//                System.out.println("Courses Size");
-//                initRecyclerView(student);
-//
-//            }
+
             initRecyclerView(student);
         } else {
             professor = gson.fromJson(user, new TypeToken<Professor>() {
             }.getType());
             nameTextView.setText("Hello, " + professor.name);
-//            if (professor.courses.size() != 0) {
-//                initRecyclerView(professor);
-//            }
+
             initRecyclerView(professor);
         }
 
@@ -142,7 +138,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
         }
 
         classesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapter(this, userCourses, this);
+        adapter = new RecyclerViewAdapter(this, userCourses, this, role, userString);
         classesRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -180,7 +176,9 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
                         , CoursePageActivity.class);
                 Gson gson = new Gson();
                 String courseJson = gson.toJson(Course.activeCourse);
+                String userJson = gson.toJson(Student.activeStudent);
                 goToCoursePageIntent.putExtra("course", courseJson);
+                goToCoursePageIntent.putExtra("user", userJson);
                 startActivity(goToCoursePageIntent);
 
             } else {
@@ -189,7 +187,7 @@ public class MainPageActivity extends AppCompatActivity implements RecyclerViewA
                         , CoursePageProfessorActivity.class);
                 Gson gson = new Gson();
                 String courseJson = gson.toJson(Course.activeCourse);
-                String userJson = gson.toJson(Student.activeStudent);
+                String userJson = gson.toJson(Professor.activeProf);
                 goToCoursePageProfessorIntent.putExtra("course", courseJson);
                 goToCoursePageProfessorIntent.putExtra("user", userJson);
                 startActivity(goToCoursePageProfessorIntent);

@@ -86,13 +86,13 @@ public class CoursePageActivity extends AppCompatActivity {
                 if (exerciseId == -1){}
 
                 else {
-                    StudentHomeworkActivity.homework = Homework.getHomeworkById(exerciseId);
+
                     Intent goToHomeworkPageStudent = new Intent(CoursePageActivity.this
                             , StudentHomeworkActivity.class);
                     Gson gson = new Gson();
-                    String courseJson = gson.toJson(course);
+                    String homeworkJson = gson.toJson(Homework.getHomeworkById(exerciseId));
                     String userJson = gson.toJson(student);
-                    goToHomeworkPageStudent.putExtra("course", courseJson);
+                    goToHomeworkPageStudent.putExtra("homework", homeworkJson);
                     goToHomeworkPageStudent.putExtra("user", userJson);
                     startActivity(goToHomeworkPageStudent);
                 }

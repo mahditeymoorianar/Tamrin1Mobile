@@ -17,16 +17,25 @@ import java.util.List;
 
 import edu.sharif.mpqueraapp.R;
 import edu.sharif.mpqueraapp.model.Course;
+import edu.sharif.mpqueraapp.model.User;
+import edu.sharif.mpqueraapp.view.mainPage.student.JoinCourseActivity;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     LayoutInflater layoutInflater;
     List<Course> courses;
+    Context mContext;
+    String userString;
+    String role;
     private OnNoteListener mOnNoteListener;
 
-    public RecyclerViewAdapter(Context context, List<Course> courses, OnNoteListener onNoteListener) {
+    public RecyclerViewAdapter(Context context, List<Course> courses, OnNoteListener onNoteListener,
+                               String role, String userString) {
         this.layoutInflater = LayoutInflater.from(context);
         this.courses = courses;
+        this.mContext = context;
+        this.role = role;
+        this.userString = userString;
         this.mOnNoteListener = onNoteListener;
     }
 
@@ -49,6 +58,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
 
+                if (role.equals("s")) {
+
+                    Intent joinCourseIntent = new Intent(mContext
+                            , JoinCourseActivity.class);
+                    joinCourseIntent.putExtra("user", userString);
+                    mContext.startActivity(joinCourseIntent);
+
+                } else {
+
+                    Intent createClassIntent = new Intent(mContext,
+                            CreateCourseActivity.class);
+                    createClassIntent.putExtra("user", userString);
+                    mContext.startActivity(createClassIntent);
+                }
 
             }
         });
